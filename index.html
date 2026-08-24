@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CivilMaster PRO MAX - All In One Civil Engineering Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}body{background:#f5f7fb;color:#111a33}
+header{background:linear-gradient(135deg,#0f1733,#1e3a5f);color:#fff;padding:16px;position:sticky;top:0;z-index:999}
+.nav{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.logo{font-family:'Orbitron',sans-serif;font-size:20px;font-weight:900}.logo span{color:#ffcc00}
+.tabs{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px}
+.tab{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);color:#fff;padding:7px 14px;border-radius:20px;font-size:11px;font-weight:700;cursor:pointer;white-space:nowrap}.tab.active{background:#ffcc00;color:#000;border-color:#ffcc00}
+.container{max-width:1200px;margin:0 auto;padding:14px}
+.section{display:none}.section.active{display:block}
+.card{background:#fff;border-radius:20px;padding:16px;border:1px solid #e1e7f0;margin-bottom:12px;box-shadow:0 6px 20px rgba(0,0,0,.04)}
+h2{font-family:'Orbitron',sans-serif;font-size:18px;margin-bottom:12px}h2 span{color:#ff7a00}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}@media(min-width:800px){.grid{grid-template-columns:1fr 1fr 1fr 1fr}}
+.sub{background:linear-gradient(135deg,#fff,#f9fbff);border-radius:16px;padding:12px;border:1px solid #e1e7f0;cursor:pointer}
+.sub b{font-size:9px;color:#6b7ca3;letter-spacing:1px}.sub h4{font-size:13px;margin:4px 0}.sub p{font-size:10px;color:#6b7ca3}
+.input{background:#f5f7fb;border:1px solid #e1e7f0;border-radius:12px;padding:10px}
+.input label{font-size:8px;font-weight:800;color:#6b7ca3;letter-spacing:1px;display:block}.input input,.input select{width:100%;border:none;background:transparent;outline:none;font-weight:800;font-size:13px;margin-top:2px}
+.btn{width:100%;padding:13px;background:linear-gradient(135deg,#0f1733,#2a4b7c);color:#fff;border:none;border-radius:14px;font-weight:800;font-size:13px;cursor:pointer;margin-top:10px}
+.result{background:#0f1733;color:#fff;border-radius:16px;padding:14px;margin-top:10px;text-align:center}.result span{color:#ffcc00;font-weight:800;font-size:18px;display:block;margin-top:4px}
+table{width:100%;border-collapse:collapse;font-size:11px;margin-top:10px}th{background:#f5f7fb;padding:8px;text-align:left}td{padding:8px;border-bottom:1px solid #eef1f7}
+.note-page{background:#fff;border-radius:20px;padding:16px;border:1px solid #e1e7f0}.note-page ul{margin-left:18px;margin-top:8px;font-size:12px;line-height:1.7}
+.footer{text-align:center;padding:20px;color:#8a9abf;font-size:9px}
+</style>
+</head>
+<body>
+<header>
+<div class="nav">
+<div class="logo">CIVIL<span>MASTER</span> PRO MAX</div>
+<div class="tabs">
+<div class="tab active" onclick="openTab('notes')">📚 NOTES</div>
+<div class="tab" onclick="openTab('measure')">📏 MEASUREMENT</div>
+<div class="tab" onclick="openTab('calc')">🧮 CALCULATORS</div>
+<div class="tab" onclick="openTab('iscode')">📜 IS CODES</div>
+<div class="tab" onclick="openTab('interview')">💼 INTERVIEW</div>
+</div>
+</div>
+</header>
+
+<div class="container">
+<!-- NOTES -->
+<div id="notes" class="section active">
+<div class="card" style="background:linear-gradient(135deg,#ffcc00,#ffb700);text-align:center;border:none"><h2 style="color:#000">1st Year to 8th Sem - Sab Notes Yahi Hai 💛</h2><p style="font-size:11px">Click karke Full Notes Padho - SI Units ke sath</p></div>
+<div class="grid">
+<div class="sub" onclick="showNote('SOM')"><b>SEM 3 - CORE</b><h4>🏗️ SOM - Strength of Materials</h4><p>Stress, Strain, SFD BMD, Torsion - Full PDF</p></div>
+<div class="sub" onclick="showNote('RCC')"><b>SEM 5 - CORE</b><h4>🏢 RCC Design</h4><p>IS 456, Beam, Slab, Column Design</p></div>
+<div class="sub" onclick="showNote('SURVEY')"><b>SEM 3-4</b><h4>📐 Surveying</h4><p>Chain, Compass, Levelling, Total Station</p></div>
+<div class="sub" onclick="showNote('STEEL')"><b>SEM 6</b><h4>🔩 Steel Structure</h4><p>IS 800, Bolt, Weld, Tension Member</p></div>
+<div class="sub" onclick="showNote('SOIL')"><b>SEM 5</b><h4>🌍 Geotech / Soil</h4><p>Bearing Capacity, Compaction, Consolidation</p></div>
+<div class="sub" onclick="showNote('ESTIMATE')"><b>SEM 6 - MOST IMP</b><h4>📊 Estimation & Costing</h4><p>Long Wall Short Wall, Rate Analysis</p></div>
+<div class="sub" onclick="showNote('FLUID')"><b>SEM 4</b><h4>💧 Fluid Mechanics</h4><p>Bernoulli, Reynolds, Pipe Flow</p></div>
+<div class="sub" onclick="showNote('BUILDING')"><b>SEM 3</b><h4>🧱 Building Materials</h4><p>Cement, Brick, Mortar, IS Tests</p></div>
+</div>
+<div id="noteDisplay" class="note-page" style="display:none;margin-top:12px"></div>
+</div>
+
+<!-- MEASUREMENT -->
+<div id="measure" class="section">
+<div class="card"><h2>📏 Measurement Book - IS 1200 ke hisab se</h2>
+<table><tr><th>Item</th><th>Mode of Measurement</th><th>SI Unit</th></tr>
+<tr><td>Earthwork Excavation</td><td>Length x Breadth x Depth</td><td>m³</td></tr>
+<tr><td>Concrete (PCC/RCC)</td><td>L x B x H - No deduction <0.05m³</td><td>m³</td></tr>
+<tr><td>Brickwork</td><td>L x B x H - Deduction for openings</td><td>m³ / m²</td></tr>
+<tr><td>Plastering</td><td>Length x Height - Sill, Jamb extra</td><td>m²</td></tr>
+<tr><td>Painting</td><td>Area x No of Coats</td><td>m²</td></tr>
+<tr><td>Steel Reinforcement</td><td>D²/162 kg/m x Length</td><td>kg / Quintal</td></tr>
+<tr><td>Flooring / Tiles</td><td>L x B</td><td>m²</td></tr>
+</table>
+</div>
+<div class="card"><h2>📐 SI Units - Yaad Karlo</h2>
+<table><tr><th>Quantity</th><th>Unit</th><th>Formula / Value</th></tr>
+<tr><td>Cement Bag</td><td>50 kg</td><td>0.0347 m³ = 1.226 CFT</td></tr>
+<tr><td>Concrete Density</td><td>2400 kg/m³</td><td>M20=1:1.5:3</td></tr>
+<tr><td>Steel Density</td><td>7850 kg/m³</td><td>Weight = D²/162</td></tr>
+<tr><td>Brick Size</td><td>190x90x90 mm</td><td>500 nos / m³ with mortar</td></tr>
+<tr><td>1 m</td><td>Meter</td><td>3.28 ft = 1000 mm</td></tr>
+<tr><td>1 MPa</td><td>N/mm²</td><td>10.197 kg/cm²</td></tr>
+</table>
+</div>
+</div>
+
+<!-- CALCULATORS -->
+<div id="calc" class="section">
+<div class="card"><h2>🧮 Concrete Calculator <span>M20</span></h2>
+<div class="grid" style="grid-template-columns:1fr 1fr"><div class="input"><label>LENGTH (M)</label><input id="l" type="number" value="5"></div><div class="input"><label>WIDTH (M)</label><input id="w" type="number" value="4"></div><div class="input"><label>THICKNESS (M)</label><input id="t" type="number" value="0.15"></div><div class="input"><label>GRADE</label><select id="grade"><option>M20 (1:1.5:3)</option><option>M25 (1:1:2)</option><option>M15 (1:2:4)</option></select></div></div>
+<button class="btn" onclick="calcConcrete()">CALCULATE</button><div class="result"><span id="cRes">0 Bags</span><p id="cRes2" style="font-size:11px;opacity:.7">Result</p></div>
+</div>
+
+<div class="card"><h2>🔩 BBS Calculator - Steel Weight</h2>
+<div class="grid" style="grid-template-columns:1fr 1fr 1fr"><div class="input"><label>DIA (MM)</label><input id="dia" type="number" value="12"></div><div class="input"><label>LENGTH (M)</label><input id="steelL" type="number" value="6"></div><div class="input"><label>NOS</label><input id="nos" type="number" value="10"></div></div>
+<button class="btn" onclick="calcSteel()">CALCULATE STEEL KG</button><div class="result"><span id="sRes">0 kg</span><p style="font-size:10px;opacity:.7">Formula: D²/162 x L</p></div>
+</div>
+
+<div class="card"><h2>🧱 Brick Calculator</h2>
+<div class="grid" style="grid-template-columns:1fr 1fr"><div class="input"><label>WALL LENGTH (M)</label><input id="bl" type="number" value="10"></div><div class="input"><label>WALL HEIGHT (M)</label><input id="bh" type="number" value="3"></div><div class="input"><label>WALL THICKNESS</label><select id="bt"><option value="0.2">200mm (8 inch)</option><option value="0.1">100mm (4 inch)</option></select></div><div class="input"><label>BRICK SIZE</label><input value="200x100x100 with mortar" disabled></div></div>
+<button class="btn" onclick="calcBrick()">CALCULATE BRICKS</button><div class="result"><span id="bRes">0 Bricks</span></div>
+</div>
+</div>
+
+<!-- IS CODE -->
+<div id="iscode" class="section">
+<div class="card"><h2>📜 IS Codes Library - Short Notes</h2>
+<table><tr><th>IS Code</th><th>Subject</th><th>Imp Point</th></tr>
+<tr><td><b>IS 456:2000</b></td><td>RCC</td><td>Plain & Reinforced Concrete - Main Code for RCC Design, M20 min for RCC</td></tr>
+<tr><td><b>IS 800:2007</b></td><td>Steel</td><td>General Construction in Steel - Limit State Design</td></tr>
+<tr><td><b>IS 1200</b></td><td>Estimation</td><td>Method of Measurement of Building Works - All 28 Parts</td></tr>
+<tr><td><b>IS 10262:2019</b></td><td>Concrete Mix</td><td>Mix Design Procedure</td></tr>
+<tr><td><b>IS 875</b></td><td>Loads</td><td>Part 1 Dead, Part 2 Live, Part 3 Wind Load</td></tr>
+<tr><td><b>IS 1904</b></td><td>Foundation</td><td>Bearing Capacity of Soil</td></tr>
+</table>
+</div>
+</div>
+
+<!-- INTERVIEW -->
+<div id="interview" class="section">
+<div class="card"><h2>💼 Top 30 Civil Interview Questions</h2>
+<div class="note-page">
+<ul>
+<li><b>Grade of concrete? </b> M5 to M80, M20 = 20 N/mm² characteristic strength in 28 days</li>
+<li><b>Curing period? </b> 7 days min, 14 days for PPC, Columns 7 days, Slab 14-21 days</li>
+<li><b>Cover in RCC? </b> Slab 20mm, Beam 25-30mm, Column 40mm, Footing 50mm, As per IS 456</li>
+<li><b>Unit weight? </b> Cement 1440 kg/m³, Sand 1600 kg/m³, Concrete 2400 kg/m³, Steel 7850 kg/m³, Brick 1600-1920 kg/m³</li>
+<li><b>1 m³ me kitne cement bags? </b> 28.8 Bags (1440/50)</li>
+<li><b>Slump test kya hai? </b> Workability of concrete - 75-100mm for Beam/Slab</li>
+<li><b>Water cement ratio? </b> 0.4 to 0.6, Kam ratio = Zyada strength</li>
+<li><b>Long wall short wall method? </b> Estimation ka method - Wall to Wall measurement</li>
+<li><b>BBS full form? </b> Bar Bending Schedule</li>
+<li><b>Least count of dumpy level? </b> 5mm, Theodolite 20 seconds</li>
+</ul>
+</div>
+</div>
+</div>
+
+</div>
+<div class="footer">CREATED AND DEVELOPED BY PUNYA BINAY SWAIN<br>CIVILMASTER PRO MAX ©️ 2026 • All Rights Reserved • Jay Jagannath 🙏</div>
+
+<script>
+function openTab(id){
+ document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+ document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+ document.getElementById(id).classList.add('active');
+ event.target.classList.add('active');
+ window.scrollTo(0,0);
+}
+function showNote(sub){
+ let data={
+  SOM:`<h3>🏗️ SOM - Strength of Materials - Full Notes</h3><ul><li><b>Stress:</b> Force/Area, Unit N/mm² (MPa), 1 MPa=10.19 kg/cm²</li><li><b>Strain:</b> Change in Length / Original Length - No unit</li><li><b>Hook's Law:</b> Stress ∝ Strain upto Elastic limit, E = Stress/Strain</li><li><b>Types of Beam:</b> Cantilever, Simply Supported, Fixed, Continuous</li><li><b>SFD/BMD:</b> Shear Force max at support, Bending Moment max at center for UDL</li><li><b>Torsion:</b> T/J = τ/R = Gθ/L</li><li><b>Measurement:</b> Steel rod elongation measured in mm</li><li><b>PDF Download:</b> (Yahan Google Drive Link daal dena)</li></ul>`,
+  RCC:`<h3>🏢 RCC Design - IS 456:2000</h3><ul><li><b>Concrete Grade:</b> M20 min for RCC as per IS 456, Ratio 1:1.5:3</li><li><b>Steel Grade:</b> Fe415, Fe500, Fe550</li><li><b>Mix Design:</b> IS 10262 se hota hai, Target Mean Strength = fck + 1.65*S</li><li><b>Beam Design:</b> Mu = 0.87*fy*Ast*d*(1-Ast*fy/b*d*fck)</li><li><b>Slab:</b> One way if Ly/Lx >2, Two way if <2</li><li><b>Column:</b> Min 4 bars for rectangular, 6 for circular, Min eccentricity 20mm</li><li><b>Measurement:</b> Concrete in m³, Steel in kg, Shuttering in m²</li></ul>`,
+  SURVEY:`<h3>📐 Surveying - Full Notes</h3><ul><li><b>Chain Survey:</b> Simplest, only linear measurement, for small flat area</li><li><b>Compass Survey:</b> Angle + Length, Bearing measurement - WCB & RB</li><li><b>Levelling:</b> HI = RL + BS, RL = HI - FS/IS, Check ΣBS-ΣFS = Last RL - First RL</li><li><b>Contours:</b> Line joining same RL, Contour interval 0.5-1m for building</li><li><b>Total Station:</b> Angle + Distance electronic, Accuracy 1mm</li><li><b>SI Units:</b> Angle in Degree, Distance in Meter, RL in Meter</li></ul>`,
+  STEEL:`<h3>🔩 Steel Structure - IS 800:2007</h3><ul><li><b>Limit State:</b> Design for Strength & Serviceability</li><li><b>Connection:</b> Bolted & Welded, Bolt Grade 4.6, 8.8, 10.9</li><li><b>Tension Member:</b> Net area = Gross area - deduction for holes</li><li><b>Compression:</b> Slenderness ratio λ = Le/r, Max 180 for column</li><li><b>Beam:</b> Laterally supported & unsupported</li><li><b>Unit Weight:</b> 7850 kg/m³</li></ul>`,
+  SOIL:`<h3>🌍 Soil Mechanics</h3><ul><li><b>Soil Types:</b> Gravel >4.75mm, Sand 0.075-4.75mm, Silt 0.002-0.075mm, Clay <0.002mm</li><li><b>Atterberg Limits:</b> LL, PL, PI = LL-PL, Shrinkage Limit</li><li><b>Compaction:</b> OMC & MDD by Proctor Test</li><li><b>Consolidation:</b> Settlement of clay due to water expulsion</li><li><b>Bearing Capacity:</b> Terzaghi Theory, SBC 100-300 kN/m² for normal soil</li><li><b>Measurement:</b> Void ratio e, Porosity n, Degree of saturation Sr</li></ul>`,
+  ESTIMATE:`<h3>📊 Estimation & Costing - IS 1200</h3><ul><li><b>Long Wall Short Wall:</b> Length of long wall = center to center + breadth, Short wall = center to center - breadth</li><li><b>Center Line Method:</b> Total center length x breadth x height</li><li><b>Deductions:</b> Opening <0.5m² no deduction for plastering, >0.5m² full deduction</li><li><b>Rate Analysis:</b> Material + Labour + 1.5% Water + 10% Contractor Profit + 2% Tools</li><li><b>Units:</b> Earthwork m³, Brickwork m³, Plaster m², Steel kg, Woodwork m³</li><li><b>Odisha Schedule of Rate 2024:</b> Cement Rs 380/bag, Steel Rs 62/kg, Brick Rs 8/pc (approx)</li></ul>`,
+  FLUID:`<h3>💧 Fluid Mechanics</h3><ul><li><b>Properties:</b> Density ρ = Mass/Volume, 1000 kg/m³ for water, Viscosity μ</li><li><b>Bernoulli:</b> P/ρg + V²/2g + z = Constant</li><li><b>Reynolds No:</b> Re = ρVD/μ, <2000 Laminar, >4000 Turbulent</li><li><b>Measurement:</b> Discharge Q = A x V, Unit m³/sec, 1 cusec = 0.0283 m³/sec</li></ul>`,
+  BUILDING:`<h3>🧱 Building Materials</h3><ul><li><b>Cement:</b> OPC 33,43,53 Grade, 53 Grade 53 N/mm² strength in 28 days, Initial setting 30min, Final 600min</li><li><b>Brick Test:</b> Compressive 3.5 N/mm² min for Class A, Water absorption <20%</li><li><b>Sand:</b> FM 2.2-3.2, Zone I to IV, Bulking of sand 20-30%</li><li><b>Concrete:</b> Slump 75-100mm, W/C 0.45-0.55</li></ul>`
+ };
+ document.getElementById('noteDisplay').style.display='block';
+ document.getElementById('noteDisplay').innerHTML=data[sub];
+ window.scrollTo(0,400);
+}
+function calcConcrete(){
+ let l=parseFloat(document.getElementById('l').value)||0,w=parseFloat(document.getElementById('w').value)||0,t=parseFloat(document.getElementById('t').value)||0;
+ let vol=l*w*t, dry=vol*1.54, bags=(dry*(1/5.5))/0.0347, sand=dry*(1.5/5.5), agg=dry*(3/5.5);
+ document.getElementById('cRes').innerText=bags.toFixed(2)+' Bags';
+ document.getElementById('cRes2').innerText=`Sand ${sand.toFixed(3)} m³ | Agg ${agg.toFixed(3)} m³ | Vol ${vol.toFixed(3)} m³`;
+}
+function calcSteel(){
+ let d=parseFloat(document.getElementById('dia').value)||0,l=parseFloat(document.getElementById('steelL').value)||0,n=parseFloat(document.getElementById('nos').value)||0;
+ let w=(d*d/162)*l*n;
+ document.getElementById('sRes').innerText=w.toFixed(2)+' kg = '+(w/1000).toFixed(3)+' Ton';
+}
+function calcBrick(){
+ let l=parseFloat(document.getElementById('bl').value)||0,h=parseFloat(document.getElementById('bh').value)||0,th=parseFloat(document.getElementById('bt').value)||0.2;
+ let vol=l*h*th, bricks=vol/0.002;
+ document.getElementById('bRes').innerText=Math.ceil(bricks)+' Bricks + 10% Wastage = '+Math.ceil(bricks*1.1);
+}
+calcConcrete();
+</script>
+</body>
+</html>
