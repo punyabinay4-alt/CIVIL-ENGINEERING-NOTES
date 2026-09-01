@@ -1,160 +1,2938 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Civil Notes & Estimates - Jagatsinghpur - Simple & Working</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;800&family=Orbitron:wght@800&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Civil Notes & Estimates - Jagatsinghpur</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Orbitron:wght@700;800&display=swap" rel="stylesheet">
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-body{background:#f8fafc;color:#0f172a;padding-bottom:80px}
-.header{background:#0f172a;color:#fff;padding:14px 16px;position:sticky;top:0;z-index:100}
-.header h1{font-family:'Orbitron';font-size:16px}.header h1 span{color:#facc15}
-.header p{font-size:9px;opacity:.7;margin-top:2px}
-.search-box{padding:10px 12px;background:#fff;position:sticky;top:62px;z-index:99;border-bottom:1px solid #e2e8f0}
-.search-box input{width:100%;padding:10px 14px;border-radius:10px;border:1px solid #e2e8f0;background:#f1f5f9;outline:none;font-size:12px;font-weight:600}
-.main{max-width:800px;margin:0 auto;padding:12px}
-.card{background:#fff;border-radius:16px;padding:14px;border:1px solid #e2e8f0;margin-bottom:12px;box-shadow:0 2px 10px rgba(0,0,0,.03)}
-.card-title{font-size:13px;font-weight:800;margin-bottom:10px;display:flex;align-items:center;gap:6px}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.btn{padding:10px;border:none;border-radius:10px;font-size:11px;font-weight:700;cursor:pointer;width:100%;text-align:center}
-.btn-dark{background:#0f172a;color:#fff}.btn-yellow{background:#facc15;color:#000}.btn-outline{background:#fff;border:1px solid #e2e8f0}
-.input-group{margin-bottom:8px}.input-group label{font-size:9px;font-weight:700;color:#64748b;display:block;margin-bottom:3px}
-.input-group input,.input-group select{width:100%;padding:9px 10px;border-radius:8px;border:1px solid #e2e8f0;background:#f8fafc;font-size:12px;font-weight:600;outline:none}
-.result{background:#0f172a;color:#fff;border-radius:10px;padding:10px;margin-top:10px;font-size:12px;text-align:center;line-height:1.5}
-.result span{color:#facc15;font-weight:800;font-size:14px}
-.result small{font-size:9px;opacity:.7;display:block;margin-top:4px}
-table{width:100%;border-collapse:collapse;font-size:10px;margin-top:8px} th{background:#f1f5f9;padding:6px;text-align:left;font-size:9px} td{padding:6px;border-bottom:1px solid #f1f5f9}
-.menu{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #e2e8f0;display:flex;justify-content:space-around;padding:6px 0;z-index:200}
-.menu-item{flex:1;text-align:center;padding:4px;font-size:8px;font-weight:700;cursor:pointer;color:#64748b}.menu-item.active{color:#0f172a}.menu-item i{font-size:18px;display:block}
-.section{display:none}.section.active{display:block}
-.badge{font-size:7px;background:#facc15;color:#000;padding:2px 6px;border-radius:10px;font-weight:800}
-.note-card{border-left:4px solid #facc15}
-.footer{text-align:center;padding:16px;font-size:8px;color:#94a3b8}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:#f8fafc;
+  color:#0f172a;
+  padding-bottom:75px;
+}
+
+body.dark{
+  background:#020617;
+  color:#e2e8f0;
+}
+
+.header{
+  background:#0f172a;
+  color:#fff;
+  padding:14px 16px;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+.header h1{
+  font-family:'Orbitron',sans-serif;
+  font-size:16px;
+}
+
+.header h1 span{
+  color:#facc15;
+}
+
+.header p{
+  font-size:9px;
+  opacity:.75;
+  margin-top:3px;
+}
+
+.header-actions{
+  position:absolute;
+  right:12px;
+  top:13px;
+  display:flex;
+  gap:5px;
+}
+
+.icon-btn{
+  border:0;
+  background:#1e293b;
+  color:#fff;
+  width:32px;
+  height:32px;
+  border-radius:9px;
+  cursor:pointer;
+}
+
+.search-box{
+  padding:10px 12px;
+  background:#fff;
+  position:sticky;
+  top:61px;
+  z-index:999;
+  border-bottom:1px solid #e2e8f0;
+}
+
+.dark .search-box{
+  background:#0f172a;
+  border-color:#334155;
+}
+
+.search-box input{
+  width:100%;
+  padding:11px 14px;
+  border-radius:10px;
+  border:1px solid #e2e8f0;
+  background:#f1f5f9;
+  outline:none;
+  font-size:12px;
+  font-weight:600;
+}
+
+.dark .search-box input{
+  background:#1e293b;
+  color:#fff;
+  border-color:#334155;
+}
+
+.main{
+  max-width:850px;
+  margin:0 auto;
+  padding:12px;
+}
+
+.section{
+  display:none;
+}
+
+.section.active{
+  display:block;
+}
+
+.card{
+  background:#fff;
+  border-radius:16px;
+  padding:14px;
+  border:1px solid #e2e8f0;
+  margin-bottom:12px;
+  box-shadow:0 2px 10px rgba(0,0,0,.035);
+}
+
+.dark .card{
+  background:#0f172a;
+  border-color:#334155;
+  box-shadow:none;
+}
+
+.card-title{
+  font-size:13px;
+  font-weight:800;
+  margin-bottom:10px;
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+
+.grid2{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+}
+
+.grid3{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+}
+
+.btn{
+  padding:10px;
+  border:none;
+  border-radius:10px;
+  font-size:11px;
+  font-weight:700;
+  cursor:pointer;
+  width:100%;
+  text-align:center;
+}
+
+.btn:active{
+  transform:scale(.98);
+}
+
+.btn-dark{
+  background:#0f172a;
+  color:#fff;
+}
+
+.btn-yellow{
+  background:#facc15;
+  color:#000;
+}
+
+.btn-outline{
+  background:#fff;
+  border:1px solid #e2e8f0;
+  color:#0f172a;
+}
+
+.dark .btn-outline{
+  background:#1e293b;
+  color:#fff;
+  border-color:#475569;
+}
+
+.input-group{
+  margin-bottom:8px;
+}
+
+.input-group label{
+  font-size:9px;
+  font-weight:700;
+  color:#64748b;
+  display:block;
+  margin-bottom:3px;
+}
+
+.dark .input-group label{
+  color:#94a3b8;
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea{
+  width:100%;
+  padding:9px 10px;
+  border-radius:8px;
+  border:1px solid #e2e8f0;
+  background:#f8fafc;
+  font-size:12px;
+  font-weight:600;
+  outline:none;
+}
+
+.dark .input-group input,
+.dark .input-group select,
+.dark .input-group textarea{
+  background:#1e293b;
+  color:#fff;
+  border-color:#475569;
+}
+
+.result{
+  background:#0f172a;
+  color:#fff;
+  border-radius:10px;
+  padding:11px;
+  margin-top:10px;
+  font-size:12px;
+  text-align:center;
+  line-height:1.6;
+}
+
+.result span{
+  color:#facc15;
+  font-weight:800;
+  font-size:14px;
+}
+
+.result small{
+  font-size:9px;
+  opacity:.7;
+  display:block;
+  margin-top:4px;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:10px;
+  margin-top:8px;
+  overflow:hidden;
+}
+
+th{
+  background:#f1f5f9;
+  padding:7px;
+  text-align:left;
+  font-size:9px;
+}
+
+td{
+  padding:7px;
+  border-bottom:1px solid #f1f5f9;
+}
+
+.dark th{
+  background:#1e293b;
+}
+
+.dark td{
+  border-color:#334155;
+}
+
+.menu{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  background:#fff;
+  border-top:1px solid #e2e8f0;
+  display:flex;
+  justify-content:space-around;
+  padding:6px 0;
+  z-index:2000;
+}
+
+.dark .menu{
+  background:#0f172a;
+  border-color:#334155;
+}
+
+.menu-item{
+  flex:1;
+  text-align:center;
+  padding:4px;
+  font-size:8px;
+  font-weight:700;
+  cursor:pointer;
+  color:#64748b;
+}
+
+.menu-item.active{
+  color:#0f172a;
+}
+
+.dark .menu-item.active{
+  color:#facc15;
+}
+
+.menu-item i{
+  font-size:18px;
+  display:block;
+  font-style:normal;
+}
+
+.badge{
+  font-size:7px;
+  background:#facc15;
+  color:#000;
+  padding:2px 6px;
+  border-radius:10px;
+  font-weight:800;
+}
+
+.note-card{
+  border-left:4px solid #facc15;
+}
+
+.detail{
+  line-height:1.7;
+  font-size:10px;
+}
+
+.dark .detail{
+  background:#1e293b !important;
+  border-color:#475569 !important;
+}
+
+.hero{
+  background:linear-gradient(135deg,#0f172a,#1e3a8a);
+  color:#fff;
+}
+
+.stat{
+  background:#f8fafc;
+  border-radius:12px;
+  padding:10px;
+  text-align:center;
+  border:1px solid #e2e8f0;
+}
+
+.dark .stat{
+  background:#1e293b;
+  border-color:#334155;
+}
+
+.stat b{
+  display:block;
+  font-size:16px;
+}
+
+.stat small{
+  font-size:8px;
+  color:#64748b;
+}
+
+.footer{
+  text-align:center;
+  padding:20px;
+  font-size:8px;
+  color:#94a3b8;
+}
+
+@media(max-width:520px){
+  .grid3{
+    grid-template-columns:1fr 1fr;
+  }
+
+  table{
+    font-size:9px;
+  }
+
+  th,td{
+    padding:5px;
+  }
+}
 </style>
 </head>
+
 <body>
-<div class="header"><h1>CIVIL <span>NOTES & ESTIMATES</span></h1><p>📍 Jagatsinghpur, Odisha | By Punya Binay Swain | Simple & 100% Working</p></div>
-<div class="search-box"><input id="searchInput" placeholder="🔍 Search - RCC, BBS, Concrete, Brick, IS Code..." oninput="searchNotes()"></div>
+
+<div class="header">
+  <h1>CIVIL <span>NOTES & ESTIMATES</span></h1>
+  <p>📍 Jagatsinghpur, Odisha | By Punya Binay Swain</p>
+
+  <div class="header-actions">
+    <button class="icon-btn" onclick="toggleDark()" id="darkBtn">🌙</button>
+  </div>
+</div>
+
+<div class="search-box">
+  <input
+    id="searchInput"
+    placeholder="🔍 Search RCC, BBS, Concrete, Brick, IS Code..."
+    oninput="globalSearch()"
+  >
+</div>
 
 <div class="main">
-<!-- HOME / BBS -->
+
+<!-- HOME -->
 <div id="sec-home" class="section active">
-<div class="card" style="background:linear-gradient(135deg,#0f172a,#1e3a8a);color:#fff"><div class="card-title" style="color:#facc15">🔩 BBS GENERATOR - Yahan BBS Banao (100% Working)</div><p style="font-size:10px;opacity:.8">Drawing dekh ke Length, Dia, Nos dalo. Hook 9D, Lap 50D automatic. Weight D²/162 se niklega.</p></div>
 
-<div class="card"><div class="card-title">1. Structure Type Chuno</div><div class="grid2">
-<button class="btn btn-dark" onclick="setType('footing')">Footing</button><button class="btn btn-outline" onclick="setType('column')">Column</button>
-<button class="btn btn-outline" onclick="setType('beam')">Beam</button><button class="btn btn-outline" onclick="setType('slab')">Slab</button>
-<button class="btn btn-outline" onclick="setType('stair')">Staircase</button><button class="btn btn-outline" onclick="setType('pile')">Pile</button>
-</div></div>
-
-<div class="card" id="bbsFormCard"><div class="card-title" id="bbsTitle">Footing BBS - Isolated</div>
-<div id="form-footing"><div class="grid2"><div class="input-group"><label>Footing L (m)</label><input id="fL" value="1.5" type="number" step="0.1"></div><div class="input-group"><label>Footing B (m)</label><input id="fB" value="1.5" type="number" step="0.1"></div></div><div class="grid2"><div class="input-group"><label>Cover mm (50)</label><input id="fCover" value="50" type="number"></div><div class="input-group"><label>Bar Dia mm (12)</label><input id="fDia" value="12" type="number"></div></div><div class="grid2"><div class="input-group"><label>Spacing mm c/c (150)</label><input id="fSpa" value="150" type="number"></div><div class="input-group"><label>No of Footings</label><input id="fNos" value="1" type="number"></div></div></div>
-
-<div id="form-column" style="display:none"><div class="grid2"><div class="input-group"><label>Column Size mm LxB (300x300)</label><input id="cSize" value="300x300"></div><div class="input-group"><label>Height m (3)</label><input id="cH" value="3" type="number"></div></div><div class="grid2"><div class="input-group"><label>Main Dia mm (16)</label><input id="cDia" value="16" type="number"></div><div class="input-group"><label>No of Bars (4)</label><input id="cNos" value="4" type="number"></div></div><div class="grid2"><div class="input-group"><label>Stirrup Dia mm (8)</label><input id="cStDia" value="8" type="number"></div><div class="input-group"><label>Stirrup Spa mm (150)</label><input id="cStSpa" value="150" type="number"></div></div></div>
-
-<div id="form-beam" style="display:none"><div class="grid2"><div class="input-group"><label>Beam Length m (5)</label><input id="bL" value="5" type="number"></div><div class="input-group"><label>Beam Width mm (300)</label><input id="bW" value="300" type="number"></div></div><div class="grid2"><div class="input-group"><label>Beam Depth mm (450)</label><input id="bD" value="450" type="number"></div><div class="input-group"><label>Bottom Bars Dia x Nos (16x3)</label><input id="bBot" value="16x3"></div></div><div class="grid2"><div class="input-group"><label>Top Bars Dia x Nos (12x2)</label><input id="bTop" value="12x2"></div><div class="input-group"><label>Stirrup Dia @ Spa (8@150)</label><input id="bSt" value="8@150"></div></div></div>
-
-<div id="form-slab" style="display:none"><div class="grid2"><div class="input-group"><label>Slab LxB m (4x3)</label><input id="sLB" value="4x3"></div><div class="input-group"><label>Thickness mm (150)</label><input id="sT" value="150" type="number"></div></div><div class="grid2"><div class="input-group"><label>Main Dia @ Spa (10@150)</label><input id="sMain" value="10@150"></div><div class="input-group"><label>Dist Dia @ Spa (8@200)</label><input id="sDist" value="8@200"></div></div></div>
-
-<button class="btn btn-yellow" style="margin-top:10px" onclick="calculateBBS()">⚡ CALCULATE BBS - m³, CFT, kg, Ton</button>
-<div class="result" id="bbsResult" style="display:none"></div><div id="bbsTable"></div>
-<button class="btn btn-dark" id="downloadBtn" style="display:none;margin-top:8px" onclick="downloadBBS()">⬇️ DOWNLOAD EXCEL CSV</button>
+<div class="card hero">
+  <div class="card-title" style="color:#facc15">
+    🏗️ CIVIL ENGINEERING HUB
+  </div>
+  <p style="font-size:10px;opacity:.85">
+    BBS, Estimation, Quantity Calculation, Civil Notes,
+    Site Work, Lab Practicals & Unit Conversion — all in one place.
+  </p>
 </div>
 
-<div class="card"><div class="card-title">📏 Quick Formulas (m³ & CFT Dono Me)</div><table><tr><th>Item</th><th>Formula</th><th>m³ to CFT</th></tr><tr><td>Concrete</td><td>LxBxH m³</td><td>m³ x35.31 = CFT</td></tr><tr><td>Steel</td><td>D²/162 x L x Nos kg</td><td>kg/1000=Ton kg*0.00981=kN</td></tr><tr><td>Brick 200mm</td><td>500 Nos / m³</td><td>1m³=35.31CFT</td></tr><tr><td>Cement Bag</td><td>1 Bag=0.0347m³=1.226CFT</td><td>28.8 Bags=1m³</td></tr></table></div>
+<div class="grid3">
+
+<div class="stat">
+<b id="statNotes">10+</b>
+<small>Notes</small>
 </div>
+
+<div class="stat">
+<b>10+</b>
+<small>Calculators</small>
+</div>
+
+<div class="stat">
+<b>40+</b>
+<small>Experiments</small>
+</div>
+
+</div>
+
+<div class="card">
+<div class="card-title">🔩 BBS GENERATOR</div>
+
+<p style="font-size:10px;color:#64748b;margin-bottom:10px">
+Drawing ke according dimensions, dia, spacing aur number of bars enter karke approximate BBS quantity nikalo.
+</p>
+
+<div class="grid2">
+
+<button class="btn btn-dark" onclick="setType('footing',this)">
+Footing
+</button>
+
+<button class="btn btn-outline" onclick="setType('column',this)">
+Column
+</button>
+
+<button class="btn btn-outline" onclick="setType('beam',this)">
+Beam
+</button>
+
+<button class="btn btn-outline" onclick="setType('slab',this)">
+Slab
+</button>
+
+</div>
+</div>
+
+<div class="card">
+
+<div class="card-title" id="bbsTitle">
+Footing BBS
+</div>
+
+<!-- FOOTING -->
+
+<div id="form-footing">
+
+<div class="grid2">
+
+<div class="input-group">
+<label>Footing Length (m)</label>
+<input id="fL" value="1.5" type="number" step="0.01">
+</div>
+
+<div class="input-group">
+<label>Footing Width (m)</label>
+<input id="fB" value="1.5" type="number" step="0.01">
+</div>
+
+</div>
+
+<div class="grid2">
+
+<div class="input-group">
+<label>Cover (mm)</label>
+<input id="fCover" value="50" type="number">
+</div>
+
+<div class="input-group">
+<label>Bar Dia (mm)</label>
+<input id="fDia" value="12" type="number">
+</div>
+
+</div>
+
+<div class="grid2">
+
+<div class="input-group">
+<label>Spacing c/c (mm)</label>
+<input id="fSpa" value="150" type="number">
+</div>
+
+<div class="input-group">
+<label>No. of Footings</label>
+<input id="fNos" value="1" type="number">
+</div>
+
+</div>
+
+</div>
+
+<!-- COLUMN -->
+
+<div id="form-column" style="display:none">
+
+<div class="grid2">
+
+<div class="input-group">
+<label>Column Size L×B (mm)</label>
+<input id="cSize" value="300x300">
+</div>
+
+<div class="input-group">
+<label>Height (m)</label>
+<input id="cH" value="3" type="number">
+</div>
+
+</div>
+
+<div class="grid2">
+
+<div class="input-group">
+<label>Main Dia (mm)</label>
+<input id="cDia" value="16" type="number">
+</div>
+
+<div class="input-group">
+<label>Main Bars Nos</label>
+<input id="cNos" value="4" type="number">
+</div>
+
+</div>
+
+<div class="grid2">
+
+<div class="input-group">
+<label>Stirrup Dia (mm)</label>
+<input id="cStDia" value="8" type="number">
+</div>
+
+<div class="input-group">
+<label>Stirrup Spacing (mm)</label>
+<input id="cStSpa" value="150" type="number">
+</div>
+
+</div>
+
+<div class="input-group">
+<label>Cover (mm)</label>
+<input id="cCover" value="40" type="number">
+</div>
+
+</div>
+
+<!-- BEAM -->
+
+<div id="form-beam" style="display:none">
+
+<div class="grid2">
+
+<div class="input-group">
+<label>Beam Length (m)</label>
+<input id="bL" value="5" type="number">
+</div>
+
+<div class="input-group">
+<label>Width (mm)</label>
+<input id="bW" value="300" type="number">
+</div>
+
+</div>
+
+<div class="grid2">
+
+<div class="input-group">
+<label>Depth (mm)</label>
+<input id="bD" value="450" type="number">
+</div>
+
+<div class="input-group">
+<label>Bottom Dia × Nos</label>
+<input id="bBot" value="16x3">
+</div>
+
+</div>
+
+<div class="grid2">
+
+<div class="input-group">
+<label>Top Dia × Nos</label>
+<input id="bTop" value="12x2">
+</div>
+
+<div class="input-group">
+<label>Stirrup Dia @ Spa</label>
+<input id="bSt" value="8@150">
+</div>
+
+</div>
+
+</div>
+
+<!-- SLAB -->
+
+<div id="form-slab" style="display:none">
+
+<div class="grid2">
+
+<div class="input-group">
+<label>Slab L×B (m)</label>
+<input id="sLB" value="4x3">
+</div>
+
+<div class="input-group">
+<label>Thickness (mm)</label>
+<input id="sT" value="150" type="number">
+</div>
+
+</div>
+
+<div class="grid2">
+
+<div class="input-group">
+<label>Main Dia @ Spa</label>
+<input id="sMain" value="10@150">
+</div>
+
+<div class="input-group">
+<label>Distribution Dia @ Spa</label>
+<input id="sDist" value="8@200">
+</div>
+
+</div>
+
+</div>
+
+<button
+class="btn btn-yellow"
+style="margin-top:5px"
+onclick="calculateBBS()">
+⚡ CALCULATE BBS
+</button>
+
+<div id="bbsResult" class="result" style="display:none"></div>
+
+<div id="bbsTable"></div>
+
+<button
+class="btn btn-dark"
+id="downloadBtn"
+style="display:none;margin-top:8px"
+onclick="downloadBBS()">
+⬇️ DOWNLOAD CSV
+</button>
+
+</div>
+
+</div>
+
 
 <!-- CALCULATORS -->
+
 <div id="sec-calc" class="section">
-<div class="card"><div class="card-title">🧮 All Calculators - 100% Working - m³, CFT, Bags, kg</div></div>
 
-<div class="card"><div class="card-title">Concrete Calculator - All Grades <span class="badge">m³ CFT Bags</span></div>
-<div class="grid2"><div class="input-group"><label>Length m</label><input id="ccL" value="5" type="number"></div><div class="input-group"><label>Width m</label><input id="ccB" value="4" type="number"></div></div><div class="grid2"><div class="input-group"><label>Thickness m</label><input id="ccT" value="0.15" type="number"></div><div class="input-group"><label>Grade</label><select id="ccG"><option value="M20">M20 (1:1.5:3) 8.51 Bags/m³</option><option value="M25">M25 (1:1:2) 11 Bags</option><option value="M15">M15 (1:2:4) 6.5 Bags</option><option value="M10">M10 (1:3:6) 4.4 Bags</option></select></div></div><button class="btn btn-dark" onclick="calcConcrete()">CALCULATE</button><div class="result" id="ccRes" style="display:none"></div>
+<div class="card">
+<div class="card-title">
+🧮 CIVIL CALCULATORS
 </div>
-
-<div class="card"><div class="card-title">Brick Work Calculator <span class="badge">Nos + Cement + Sand CFT</span></div>
-<div class="grid2"><div class="input-group"><label>Wall Length m</label><input id="brL" value="10" type="number"></div><div class="input-group"><label>Wall Height m</label><input id="brH" value="3" type="number"></div></div><div class="input-group"><label>Thickness m (0.2=200mm)</label><input id="brT" value="0.2" type="number"></div><button class="btn btn-dark" onclick="calcBrick()">CALCULATE</button><div class="result" id="brRes" style="display:none"></div>
-</div>
-
-<div class="card"><div class="card-title">Plaster Calculator <span class="badge">m² ft² m³ CFT</span></div>
-<div class="grid2"><div class="input-group"><label>Area m²</label><input id="plA" value="100" type="number"></div><div class="input-group"><label>Thickness mm (12 inner 15 outer)</label><input id="plT" value="12" type="number"></div></div><button class="btn btn-dark" onclick="calcPlaster()">CALCULATE</button><div class="result" id="plRes" style="display:none"></div>
+<p style="font-size:10px;color:#64748b">
+Quantity calculation for estimation and site work.
+</p>
 </div>
 
-<div class="card"><div class="card-title">Steel Weight Calculator <span class="badge">kg Ton kN</span></div>
-<div class="grid2"><div class="input-group"><label>Dia mm</label><input id="stD" value="12" type="number"></div><div class="input-group"><label>Length m</label><input id="stL" value="6" type="number"></div></div><div class="input-group"><label>Nos</label><input id="stN" value="20" type="number"></div><button class="btn btn-dark" onclick="calcSteel()">CALCULATE</button><div class="result" id="stRes" style="display:none"></div>
+<!-- CONCRETE -->
+
+<div class="card">
+
+<div class="card-title">
+Concrete Calculator
+<span class="badge">m³ CFT Bags</span>
 </div>
 
-<div class="card"><div class="card-title">🔄 Unit Converter - All Units Working</div>
-<div class="grid2"><div class="input-group"><label>Value</label><input id="uVal" value="1" type="number" oninput="convertUnit()"></div><div class="input-group"><label>Convert</label><select id="uType" onchange="convertUnit()"><option value="m3-cft">m³ to CFT (Cubic Feet)</option><option value="cft-m3">CFT to m³</option><option value="m-ft">Meter to Feet</option><option value="ft-m">Feet to Meter</option><option value="kg-ton">kg to Ton</option><option value="kg-kn">kg to kN</option><option value="mpa-kgcm2">MPa to kg/cm²</option><option value="bag-m3">Cement Bag to m³</option><option value="m2-ft2">m² to ft²</option><option value="acre-cent">Acre to Cent</option></select></div></div><div class="result" id="uRes">1 m³ = 35.3147 CFT</div>
+<div class="grid2">
+
+<div class="input-group">
+<label>Length (m)</label>
+<input id="ccL" value="5" type="number">
 </div>
+
+<div class="input-group">
+<label>Width (m)</label>
+<input id="ccB" value="4" type="number">
 </div>
+
+</div>
+
+<div class="grid2">
+
+<div class="input-group">
+<label>Thickness (m)</label>
+<input id="ccT" value="0.15" type="number">
+</div>
+
+<div class="input-group">
+<label>Grade</label>
+
+<select id="ccG">
+
+<option value="M20">M20</option>
+<option value="M25">M25</option>
+<option value="M15">M15</option>
+<option value="M10">M10</option>
+
+</select>
+
+</div>
+
+</div>
+
+<button class="btn btn-dark" onclick="calcConcrete()">
+CALCULATE
+</button>
+
+<div class="result" id="ccRes" style="display:none"></div>
+
+</div>
+
+
+<!-- BRICK -->
+
+<div class="card">
+
+<div class="card-title">
+Brick Work Calculator
+<span class="badge">Bricks Cement Sand</span>
+</div>
+
+<div class="grid2">
+
+<div class="input-group">
+<label>Wall Length (m)</label>
+<input id="brL" value="10" type="number">
+</div>
+
+<div class="input-group">
+<label>Wall Height (m)</label>
+<input id="brH" value="3" type="number">
+</div>
+
+</div>
+
+<div class="input-group">
+<label>Wall Thickness (m)</label>
+<input id="brT" value="0.2" type="number">
+</div>
+
+<button class="btn btn-dark" onclick="calcBrick()">
+CALCULATE
+</button>
+
+<div class="result" id="brRes" style="display:none"></div>
+
+</div>
+
+
+<!-- PLASTER -->
+
+<div class="card">
+
+<div class="card-title">
+Plaster Calculator
+</div>
+
+<div class="grid2">
+
+<div class="input-group">
+<label>Area (m²)</label>
+<input id="plA" value="100" type="number">
+</div>
+
+<div class="input-group">
+<label>Thickness (mm)</label>
+<input id="plT" value="12" type="number">
+</div>
+
+</div>
+
+<div class="input-group">
+<label>Mix Ratio</label>
+<select id="plRatio">
+<option value="6">1 : 6</option>
+<option value="4">1 : 4</option>
+<option value="5">1 : 5</option>
+</select>
+</div>
+
+<button class="btn btn-dark" onclick="calcPlaster()">
+CALCULATE
+</button>
+
+<div class="result" id="plRes" style="display:none"></div>
+
+</div>
+
+
+<!-- STEEL -->
+
+<div class="card">
+
+<div class="card-title">
+Steel Weight Calculator
+<span class="badge">kg Ton kN</span>
+</div>
+
+<div class="grid2">
+
+<div class="input-group">
+<label>Dia (mm)</label>
+<input id="stD" value="12" type="number">
+</div>
+
+<div class="input-group">
+<label>Length (m)</label>
+<input id="stL" value="6" type="number">
+</div>
+
+</div>
+
+<div class="input-group">
+<label>Number of Bars</label>
+<input id="stN" value="20" type="number">
+</div>
+
+<button class="btn btn-dark" onclick="calcSteel()">
+CALCULATE
+</button>
+
+<div class="result" id="stRes" style="display:none"></div>
+
+</div>
+
+
+<!-- UNIT -->
+
+<div class="card">
+
+<div class="card-title">
+🔄 Unit Converter
+</div>
+
+<div class="grid2">
+
+<div class="input-group">
+<label>Value</label>
+<input id="uVal" value="1" type="number" oninput="convertUnit()">
+</div>
+
+<div class="input-group">
+<label>Convert</label>
+
+<select id="uType" onchange="convertUnit()">
+
+<option value="m3-cft">m³ → CFT</option>
+<option value="cft-m3">CFT → m³</option>
+<option value="m-ft">Meter → Feet</option>
+<option value="ft-m">Feet → Meter</option>
+<option value="kg-ton">kg → Ton</option>
+<option value="kg-kn">kg → kN</option>
+<option value="mpa-kgcm2">MPa → kg/cm²</option>
+<option value="bag-m3">Cement Bag → m³</option>
+<option value="m2-ft2">m² → ft²</option>
+<option value="acre-cent">Acre → Cent</option>
+
+</select>
+
+</div>
+
+</div>
+
+<div class="result" id="uRes"></div>
+
+</div>
+
+
+<!-- EXCAVATION -->
+
+<div class="card">
+
+<div class="card-title">
+⛏️ Excavation Calculator
+</div>
+
+<div class="grid3">
+
+<div class="input-group">
+<label>Length m</label>
+<input id="exL" value="10" type="number">
+</div>
+
+<div class="input-group">
+<label>Width m</label>
+<input id="exB" value="2" type="number">
+</div>
+
+<div class="input-group">
+<label>Depth m</label>
+<input id="exD" value="1.5" type="number">
+</div>
+
+</div>
+
+<button class="btn btn-dark" onclick="calcExcavation()">
+CALCULATE
+</button>
+
+<div class="result" id="exRes" style="display:none"></div>
+
+</div>
+
+
+<!-- PAINT -->
+
+<div class="card">
+
+<div class="card-title">
+🎨 Paint Area Calculator
+</div>
+
+<div class="grid2">
+
+<div class="input-group">
+<label>Wall Length (m)</label>
+<input id="paL" value="10" type="number">
+</div>
+
+<div class="input-group">
+<label>Wall Height (m)</label>
+<input id="paH" value="3" type="number">
+</div>
+
+</div>
+
+<div class="input-group">
+<label>Number of Coats</label>
+<input id="paC" value="2" type="number">
+</div>
+
+<button class="btn btn-dark" onclick="calcPaint()">
+CALCULATE
+</button>
+
+<div class="result" id="paRes" style="display:none"></div>
+
+</div>
+
+</div>
+
 
 <!-- NOTES -->
+
 <div id="sec-notes" class="section">
-<div class="card" style="background:#0f172a;color:#fff"><div class="card-title" style="color:#facc15">📚 All Notes - Full Data Working</div><p style="font-size:10px;opacity:.8">Click VIEW to see full formulas, IS codes, viva questions</p></div>
+
+<div class="card hero">
+
+<div class="card-title" style="color:#facc15">
+📚 CIVIL ENGINEERING NOTES
+</div>
+
+<p style="font-size:10px;opacity:.8">
+RCC, Steel, Estimation, Surveying, Soil, Highway, Hydraulics, IS Codes & Viva.
+</p>
+
+</div>
+
 <div id="notesList"></div>
+
 </div>
 
-<!-- SITE WORK -->
+
+<!-- SITE -->
+
 <div id="sec-site" class="section">
-<div class="card"><div class="card-title">🏗️ Site Engineer Work - Daily + Billing + QC - Full Data</div>
-<h3 style="font-size:11px;margin:10px 0 5px">Daily Work Schedule</h3><table><tr><th>Time</th><th>Work</th><th>Check</th></tr><tr><td>8 AM</td><td>Layout & Level</td><td>3-4-5 diagonal, BM RL</td></tr><tr><td>9 AM</td><td>Steel Check (BBS)</td><td>Cover, Spacing, Lap 50D, Hook 9D</td></tr><tr><td>11 AM</td><td>Concrete</td><td>Slump 75-100, Cube 3 per 10m³, Vibrator, Pour height max 1.5m</td></tr><tr><td>2 PM</td><td>Brick/Plaster</td><td>Plumb, Joint 10mm</td></tr><tr><td>4 PM</td><td>Billing IS1200</td><td>LxBxH, Deduction brick>0.05m³ full plaster>3m² 100% both</td></tr><tr><td>5 PM</td><td>Curing</td><td>OPC 7 days PPC 10 days</td></tr></table>
-<h3 style="font-size:11px;margin:12px 0 5px">Concrete Grades - m³ to CFT to Bags</h3><table><tr><th>Grade</th><th>Ratio</th><th>Bags/m³</th><th>Sand m³ (CFT)</th><th>Agg m³ (CFT)</th></tr><tr><td>M10</td><td>1:3:6</td><td>4.4</td><td>0.44 (15.5)</td><td>0.88 (31)</td></tr><tr><td>M15</td><td>1:2:4</td><td>6.5</td><td>0.44 (15.5)</td><td>0.88 (31)</td></tr><tr><td>M20</td><td>1:1.5:3</td><td>8.51</td><td>0.42 (14.8)</td><td>0.84 (29.6)</td></tr><tr><td>M25</td><td>1:1:2</td><td>11</td><td>0.38 (13.4)</td><td>0.76 (26.8)</td></tr></table>
-<h3 style="font-size:11px;margin:12px 0 5px">De-Shuttering & Curing</h3><table><tr><th>Item</th><th>De-Shutter</th><th>Curing</th></tr><tr><td>Column/Wall/Beam sides</td><td>16-24 hrs</td><td>7 days OPC</td></tr><tr><td>Slab <4.5m</td><td>7 days</td><td>7 days</td></tr><tr><td>Slab >4.5m</td><td>14 days</td><td>10 days</td></tr><tr><td>Beam bottom <6m</td><td>14 days</td><td>10 days</td></tr><tr><td>Beam bottom >6m</td><td>21 days</td><td>14 days</td></tr></table>
-<h3 style="font-size:11px;margin:12px 0 5px">Cover & Lap & Hook</h3><table><tr><th>Item</th><th>Value</th><th>IS Code</th></tr><tr><td>Cover Slab/Beam/Column/Footing</td><td>20/25/40/50 mm</td><td>IS456 Table 16A Mild</td></tr><tr><td>Lap Tension Fe415 M20</td><td>50D (60D for Fe500)</td><td>IS456</td></tr><tr><td>Lap Compression</td><td>40D Fe415 50D Fe500</td><td>IS456</td></tr><tr><td>Hook</td><td>9D (135° hook best)</td><td>IS2502 IS13920</td></tr><tr><td>Bend Deduction 90°/135°</td><td>2D / 3D</td><td>IS2502</td></tr><tr><td>Weight D²/162</td><td>12mm=0.888 kg/m 16mm=1.578</td><td>Derived</td></tr></table>
-</div>
+
+<div class="card">
+
+<div class="card-title">
+🏗️ SITE ENGINEER CHECKLIST
 </div>
 
-<!-- LABS -->
+<table>
+
+<tr>
+<th>Time</th>
+<th>Work</th>
+<th>Check</th>
+</tr>
+
+<tr>
+<td>8 AM</td>
+<td>Layout & Level</td>
+<td>Grid, BM, dimensions, diagonal</td>
+</tr>
+
+<tr>
+<td>9 AM</td>
+<td>Steel</td>
+<td>Dia, spacing, cover, lap, anchorage</td>
+</tr>
+
+<tr>
+<td>11 AM</td>
+<td>Concrete</td>
+<td>Slump, mix, vibration, cube</td>
+</tr>
+
+<tr>
+<td>2 PM</td>
+<td>Brick Work</td>
+<td>Line, level, plumb, joints</td>
+</tr>
+
+<tr>
+<td>4 PM</td>
+<td>Billing</td>
+<td>Measurement & deductions</td>
+</tr>
+
+<tr>
+<td>5 PM</td>
+<td>Curing</td>
+<td>Watering and curing record</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-title">
+🦺 Site Safety Checklist
+</div>
+
+<table>
+
+<tr>
+<th>Check</th>
+<th>Status</th>
+</tr>
+
+<tr>
+<td>Helmet</td>
+<td>☐</td>
+</tr>
+
+<tr>
+<td>Safety Shoes</td>
+<td>☐</td>
+</tr>
+
+<tr>
+<td>Safety Belt at Height</td>
+<td>☐</td>
+</tr>
+
+<tr>
+<td>Scaffolding Inspection</td>
+<td>☐</td>
+</tr>
+
+<tr>
+<td>Electrical Safety</td>
+<td>☐</td>
+</tr>
+
+<tr>
+<td>Housekeeping</td>
+<td>☐</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-title">
+📐 Common Site Checks
+</div>
+
+<table>
+
+<tr>
+<th>Item</th>
+<th>Typical Check</th>
+</tr>
+
+<tr>
+<td>Concrete</td>
+<td>Slump, temperature, cube, vibration</td>
+</tr>
+
+<tr>
+<td>Rebar</td>
+<td>Diameter, spacing, cover, lap, anchorage</td>
+</tr>
+
+<tr>
+<td>Brick</td>
+<td>Line, level, plumb, joint thickness</td>
+</tr>
+
+<tr>
+<td>Plaster</td>
+<td>Thickness, surface, curing</td>
+</tr>
+
+<tr>
+<td>Survey</td>
+<td>Benchmark, RL, alignment</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+
+<!-- LAB -->
+
 <div id="sec-lab" class="section">
-<div class="card"><div class="card-title">🧪 All Lab Practicals - 40+ Experiments - Full Data</div>
-<div class="card note-card"><b>SOM Lab (6 Exps):</b><br>1. Tension Test UTM: Lo=5.65√A, σ=P/A, ε=ΔL/L, E=σ/ε, %Elong=(Lf-Lo)/Lo*100<br>2. Compression Cube: Strength=P/A MPa M20=20MPa 28days 3 cubes avg<br>3. Impact Izod/Charpy: Energy=W*R*(cosβ-cosα) J<br>4. Hardness BHN=2P/πD(D-√(D²-d²))<br>5. Torsion θ=TL/GJ J=πD⁴/32 τ=TR/J<br>6. Deflection SS UDL 5WL⁴/384EI point WL³/48EI Cantilever WL³/3EI UDL WL⁴/8EI</div>
-<div class="card note-card"><b>FM Lab (5 Exps):</b><br>1. Bernoulli P/γ+V²/2g+Z=const V=Q/A<br>2. Reynolds Re=VD/ν <2000 Laminar >4000 Turbulent dye thread<br>3. Venturi Q=Cd*A1A2/√(A1²-A2²)*√2gh Cd=Qact/Qth h=mano*12.6<br>4. Notch Rect Q=2/3 Cd L√2g H^1.5 V-notch 8/15 Cd√2g tanθ/2 H^2.5<br>5. Friction hf=fLV²/2gD f=64/Re laminar Blasius 0.316/Re^0.25 turbulent</div>
-<div class="card note-card"><b>Geotech Lab (10 Exps):</b><br>1. Water content w=(W2-W3)/(W3-W1)*100 oven 105°C 24h<br>2. Specific Gravity G=(W2-W1)/[(W4-W1)-(W3-W2)] 2.65-2.75<br>3. LL Casagrande 25 blows PL 3mm thread PI=LL-PL A-line PI=0.73(LL-20)<br>4. Sieve Cu=D60/D10 Cc=D30²/D60*D10 Cu>6 sand well graded Cc1-3<br>5. Proctor Mould 1000cc hammer 2.6kg 310mm 3layer 25blows OMC MDD peak<br>6. Permeability constant k=QL/Aht sand falling k=aL/At ln(h1/h2) clay<br>7. Direct Shear Box 60x60 σ=P/A τ=S/A Plot τ vs σ c intercept φ slope τ=c+σtanφ<br>8. UCS Qu=P/A Su=Qu/2 clay 38mm dia 76mm height<br>9. Consolidation Cc=(e1-e2)/log(σ2/σ1) Cv=TvH²/t<br>10. CBR=Test/Standard*100 Standard 1370kg 2.5mm 2055kg 5mm</div>
-<div class="card note-card"><b>Concrete Lab (10 Exps):</b><br>1. Fineness 90micron <10% Blaine 225-350 m²/kg<br>2. Consistency Vicat 5-7mm penetration Setting Initial 30min Final 600min<br>3. Soundness Le Chatelier <10mm<br>4. Cement strength 70.6mm cube 1:3 23MPa 3d 33MPa 7d 43MPa 28d OPC43<br>5. Aggregate crushing <30% wearing <45% non-wearing Impact same Abrasion LA <30% Flakiness <30%<br>6. Slump cone 300mm 3layer 25blows True 25-150 Shear not ok Collapse too wet Beam 50-100 Slab 75-100 Column 75-150<br>7. Compaction factor CF=Wt partially/Wt fully <0.85 low 0.85-0.92 medium >0.92 high<br>8. Cube 150mm 3 per 10m³ fcm=fck+1.65S M20 26.6MPa<br>9. Split T=2P/πDL Flexure fb=PL/bd²<br>10. Rebound hammer chart UPV >4.5 excellent 3.5-4.5 good <3 doubtful IS13311</div>
-</div>
+
+<div class="card hero">
+
+<div class="card-title" style="color:#facc15">
+🧪 CIVIL ENGINEERING LAB
 </div>
 
-<div class="footer">Created by Punya Binay Swain<br>📍 Jagatsinghpur, Odisha | World's No.1 Civil Hub - Simple & Working<br>©2026 | Data BIS, CPWD DSR, BPUT | Jay Jagannath 🙏</div>
+<p style="font-size:10px;opacity:.8">
+SOM, Fluid Mechanics, Geotechnical and Concrete laboratory formulas.
+</p>
+
 </div>
+
+
+<div class="card note-card">
+
+<b>SOM LAB</b>
+
+<p class="detail">
+
+1. Tensile Test:<br>
+σ = P/A<br>
+ε = ΔL/L<br>
+E = σ/ε<br>
+% Elongation = (Lf − L0)/L0 × 100
+
+<br><br>
+
+2. Compression:<br>
+Strength = P/A
+
+<br><br>
+
+3. Impact Test:<br>
+Energy is obtained from the machine readings and specimen geometry.
+
+<br><br>
+
+4. Hardness:<br>
+BHN = 2P / [πD(D − √(D²−d²))]
+
+<br><br>
+
+5. Torsion:<br>
+T/J = τ/R = Gθ/L
+
+<br><br>
+
+6. Beam Deflection:<br>
+Simply supported point load = WL³/48EI<br>
+Cantilever point load = WL³/3EI
+
+</p>
+
+</div>
+
+
+<div class="card note-card">
+
+<b>FLUID MECHANICS LAB</b>
+
+<p class="detail">
+
+Bernoulli equation:<br>
+P/γ + V²/2g + Z = Constant
+
+<br><br>
+
+Continuity:<br>
+Q = AV
+
+<br><br>
+
+Reynolds Number:<br>
+Re = VD/ν
+
+<br><br>
+
+Pipe friction:<br>
+hf = fLV²/2gD
+
+<br><br>
+
+Laminar flow:<br>
+Re < 2000
+
+<br><br>
+
+Turbulent flow:<br>
+Re > 4000
+
+</p>
+
+</div>
+
+
+<div class="card note-card">
+
+<b>GEOTECHNICAL LAB</b>
+
+<p class="detail">
+
+Water Content:<br>
+w = Water Weight / Dry Soil Weight × 100
+
+<br><br>
+
+Specific Gravity:<br>
+G = Weight of soil solids / Equivalent water weight
+
+<br><br>
+
+Plasticity Index:<br>
+PI = LL − PL
+
+<br><br>
+
+Coefficient of Uniformity:<br>
+Cu = D60/D10
+
+<br><br>
+
+Coefficient of Curvature:<br>
+Cc = D30²/(D10×D60)
+
+<br><br>
+
+Direct Shear:<br>
+τ = c + σ tanφ
+
+<br><br>
+
+UCS:<br>
+qu = P/A
+
+<br><br>
+
+CBR:<br>
+CBR = Test Load / Standard Load × 100
+
+</p>
+
+</div>
+
+
+<div class="card note-card">
+
+<b>CONCRETE LAB</b>
+
+<p class="detail">
+
+1. Cement Fineness<br>
+2. Standard Consistency<br>
+3. Initial & Final Setting Time<br>
+4. Soundness<br>
+5. Compressive Strength<br>
+6. Aggregate Crushing Value<br>
+7. Aggregate Impact Value<br>
+8. Slump Test<br>
+9. Compaction Factor<br>
+10. Concrete Cube Test<br>
+11. Split Tensile Strength<br>
+12. Flexural Strength<br>
+13. Rebound Hammer<br>
+14. UPV Test
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="footer">
+
+Created by <b>Punya Binay Swain</b><br>
+📍 Jagatsinghpur, Odisha<br>
+Civil Notes & Estimates<br>
+© 2026 | Use applicable project specifications and current standards.
+
+</div>
+
+</div>
+
+
+<!-- BOTTOM MENU -->
 
 <div class="menu">
-<div class="menu-item active" onclick="openMain('home',this)"><i>🔩</i>BBS</div>
-<div class="menu-item" onclick="openMain('calc',this)"><i>🧮</i>Calc</div>
-<div class="menu-item" onclick="openMain('notes',this)"><i>📚</i>Notes</div>
-<div class="menu-item" onclick="openMain('site',this)"><i>🏗️</i>Site</div>
-<div class="menu-item" onclick="openMain('lab',this)"><i>🧪</i>Labs</div>
+
+<div class="menu-item active"
+onclick="openMain('home',this)">
+<i>🔩</i>
+BBS
 </div>
 
+<div class="menu-item"
+onclick="openMain('calc',this)">
+<i>🧮</i>
+Calc
+</div>
+
+<div class="menu-item"
+onclick="openMain('notes',this)">
+<i>📚</i>
+Notes
+</div>
+
+<div class="menu-item"
+onclick="openMain('site',this)">
+<i>🏗️</i>
+Site
+</div>
+
+<div class="menu-item"
+onclick="openMain('lab',this)">
+<i>🧪</i>
+Labs
+</div>
+
+</div>
+
+
 <script>
-let currentType='footing'; let csvContent='';
-function openMain(id,el){document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));document.getElementById('sec-'+id).classList.add('active');document.querySelectorAll('.menu-item').forEach(m=>m.classList.remove('active'));el.classList.add('active');window.scrollTo(0,0);}
-function setType(type){currentType=type;document.querySelectorAll('#bbsFormCard.btn').forEach(b=>b.className='btn btn-outline');event.target.className='btn btn-dark';document.querySelectorAll('[id^=form-]').forEach(f=>f.style.display='none');document.getElementById('form-'+type).style.display='block';document.getElementById('bbsTitle').innerText=type.charAt(0).toUpperCase()+type.slice(1)+' BBS - Working';document.getElementById('bbsResult').style.display='none';document.getElementById('bbsTable').innerHTML='';document.getElementById('downloadBtn').style.display='none';}
-function calculateBBS(){
- let html='',resText='',csv='Desc,Dia mm,Length m,Length ft,Nos,Weight kg\n';
- if(currentType==='footing'){let L=parseFloat(document.getElementById('fL').value)||1.5,B=parseFloat(document.getElementById('fB').value)||1.5,cover=parseFloat(document.getElementById('fCover').value)||50,dia=parseFloat(document.getElementById('fDia').value)||12,spa=parseFloat(document.getElementById('fSpa').value)||150,nos=parseFloat(document.getElementById('fNos').value)||1;let covM=cover/1000,hook=9*dia/1000;let lenL=L-2*covM+2*hook,lenB=B-2*covM+2*hook;let nL=Math.ceil((B-2*covM)*1000/spa)+1,nB=Math.ceil((L-2*covM)*1000/spa)+1;let w=dia*dia/162.28;let wL=w*lenL*nL,wB=w*lenB*nB,total=(wL+wB)*nos;resText=`One Footing: ${nL} bars x ${lenL.toFixed(3)}m + ${nB} bars x ${lenB.toFixed(3)}m = ${(wL+wB).toFixed(2)}kg<br>Total ${nos} Footings = <span>${total.toFixed(2)} kg = ${(total/1000).toFixed(3)} Ton</span><br><small>Concrete Vol ${(L*B*0.45).toFixed(3)}m³ = ${(L*B*0.45*35.31).toFixed(1)} CFT</small>`;html=`<table><tr><th>Desc</th><th>Dia</th><th>Length m/ft</th><th>Nos</th><th>Weight kg</th></tr><tr><td>L-dir Bars</td><td>${dia}mm</td><td>${lenL.toFixed(3)}m / ${(lenL*3.28084).toFixed(2)}ft</td><td>${nL*nos}</td><td>${(wL*nos).toFixed(2)}</td></tr><tr><td>B-dir Bars</td><td>${dia}mm</td><td>${lenB.toFixed(3)}m / ${(lenB*3.28084).toFixed(2)}ft</td><td>${nB*nos}</td><td>${(wB*nos).toFixed(2)}</td></tr><tr><th colspan="4">Total Steel</th><th>${total.toFixed(2)} kg</th></tr></table>`;csv+=`L-dir,${dia},${lenL.toFixed(3)},${(lenL*3.28084).toFixed(2)},${nL*nos},${(wL*nos).toFixed(2)}\nB-dir,${dia},${lenB.toFixed(3)},${(lenB*3.28084).toFixed(2)},${nB*nos},${(wB*nos).toFixed(2)}\nTotal,,,,,${total.toFixed(2)}`;}
- else if(currentType==='column'){let size=document.getElementById('cSize').value.split('x'),L=parseFloat(size[0])||300,B=parseFloat(size[1])||300,H=parseFloat(document.getElementById('cH').value)||3,cover=parseFloat(document.getElementById('cCover')?.value||40),dia=parseFloat(document.getElementById('cDia').value)||16,barNos=parseFloat(document.getElementById('cNos').value)||4,stDia=parseFloat(document.getElementById('cStDia').value)||8,stSpa=parseFloat(document.getElementById('cStSpa').value)||150;let lap=50*dia/1000,mainLen=H+lap+0.3,wMain=dia*dia/162.28*mainLen*barNos,perim=2*((L-2*cover)+(B-2*cover))/1000,stLen=perim+0.15,stNos=Math.ceil(H*1000/stSpa)+1,wSt=stDia*stDia/162.28*stLen*stNos,total=wMain+wSt;resText=`Main ${barNos}nos x ${mainLen.toFixed(3)}m = ${wMain.toFixed(2)}kg<br>Stirrups ${stNos}nos x ${stLen.toFixed(3)}m = ${wSt.toFixed(2)}kg<br>Total One Column = <span>${total.toFixed(2)}kg</span><br><small>Concrete ${(L/1000*B/1000*H).toFixed(3)}m³ = ${(L/1000*B/1000*H*35.31).toFixed(1)}CFT</small>`;html=`<table><tr><th>Desc</th><th>Dia</th><th>Length</th><th>Nos</th><th>kg</th></tr><tr><td>Main Bars</td><td>${dia}mm</td><td>${mainLen.toFixed(3)}m / ${(mainLen*3.28).toFixed(2)}ft</td><td>${barNos}</td><td>${wMain.toFixed(2)}</td></tr><tr><td>Stirrups</td><td>${stDia}mm</td><td>${stLen.toFixed(3)}m</td><td>${stNos}</td><td>${wSt.toFixed(2)}</td></tr></table>`;}
- else if(currentType==='beam'){let L=parseFloat(document.getElementById('bL').value)||5,B=parseFloat(document.getElementById('bW').value)||300,D=parseFloat(document.getElementById('bD').value)||450,bot=document.getElementById('bBot').value.split('x'),top=document.getElementById('bTop').value.split('x'),st=document.getElementById('bSt').value.split('@');let botDia=parseFloat(bot[0])||16,botNos=parseFloat(bot[1])||3,topDia=parseFloat(top[0])||12,topNos=parseFloat(top[1])||2,stDia=parseFloat(st[0])||8,stSpa=parseFloat(st[1])||150;let clearL=L-0.05,Ld=50*botDia/1000,botLen=clearL+2*Ld,topLen=clearL+2*Ld,wBot=botDia*botDia/162.28*botLen*botNos,wTop=topDia*topDia/162.28*topLen*topNos,stPerim=2*((B/1000-0.05)+(D/1000-0.05)),stLen=stPerim+0.15,stNos=Math.ceil(L*1000/stSpa)+1,wSt=stDia*stDia/162.28*stLen*stNos,total=wBot+wTop+wSt;resText=`Bottom ${botNos}x${botLen.toFixed(3)}m=${wBot.toFixed(1)}kg<br>Top ${topNos}x${topLen.toFixed(3)}m=${wTop.toFixed(1)}kg<br>Stirrups ${stNos}x${stLen.toFixed(3)}m=${wSt.toFixed(1)}kg<br>Total = <span>${total.toFixed(2)}kg = ${(total/1000).toFixed(3)}Ton</span><br><small>Concrete ${(L*B/1000*D/1000).toFixed(3)}m³ = ${(L*B/1000*D/1000*35.31).toFixed(1)}CFT</small>`;html=`<table><tr><th>Desc</th><th>Dia</th><th>Len m/ft</th><th>Nos</th><th>kg</th></tr><tr><td>Bottom</td><td>${botDia}</td><td>${botLen.toFixed(3)}m ${(botLen*3.28).toFixed(2)}ft</td><td>${botNos}</td><td>${wBot.toFixed(2)}</td></tr><tr><td>Top</td><td>${topDia}</td><td>${topLen.toFixed(3)}m</td><td>${topNos}</td><td>${wTop.toFixed(2)}</td></tr><tr><td>Stirrup</td><td>${stDia}</td><td>${stLen.toFixed(3)}m</td><td>${stNos}</td><td>${wSt.toFixed(2)}</td></tr></table>`;}
- else if(currentType==='slab'){let parts=document.getElementById('sLB').value.split('x'),L=parseFloat(parts[0])||4,B=parseFloat(parts[1])||3,T=parseFloat(document.getElementById('sT').value)||150,main=document.getElementById('sMain').value.split('@'),dist=document.getElementById('sDist').value.split('@');let mainDia=parseFloat(main[0])||10,mainSpa=parseFloat(main[1])||150,distDia=parseFloat(dist[0])||8,distSpa=parseFloat(dist[1])||200,cover=20;let mainLen=B-2*cover/1000+2*9*mainDia/1000+0.42*(T-2*cover)/1000*2,mainNos=Math.ceil(L*1000/mainSpa)+1,distLen=L-2*cover/1000+2*9*distDia/1000,distNos=Math.ceil(B*1000/distSpa)+1,wMain=mainDia*mainDia/162.28*mainLen*mainNos,wDist=distDia*distDia/162.28*distLen*distNos,total=wMain+wDist;resText=`Main ${mainNos}nos x ${mainLen.toFixed(3)}m = ${wMain.toFixed(1)}kg<br>Dist ${distNos}nos x ${distLen.toFixed(3)}m = ${wDist.toFixed(1)}kg<br>Total = <span>${total.toFixed(2)}kg</span><br><small>Concrete ${(L*B*T/1000).toFixed(3)}m³ = ${(L*B*T/1000*35.31).toFixed(1)}CFT</small>`;html=`<table><tr><th>Desc</th><th>Dia</th><th>Length</th><th>Nos</th><th>kg</th></tr><tr><td>Main</td><td>${mainDia}</td><td>${mainLen.toFixed(3)}m</td><td>${mainNos}</td><td>${wMain.toFixed(2)}</td></tr><tr><td>Dist</td><td>${distDia}</td><td>${distLen.toFixed(3)}m</td><td>${distNos}</td><td>${wDist.toFixed(2)}</td></tr></table>`;}
- document.getElementById('bbsResult').innerHTML=resText;document.getElementById('bbsResult').style.display='block';document.getElementById('bbsTable').innerHTML=html;csvContent=csv;document.getElementById('downloadBtn').style.display='block';
+
+let currentType = 'footing';
+let csvContent = '';
+
+
+/* NAVIGATION */
+
+function openMain(id,el){
+
+document.querySelectorAll('.section')
+.forEach(s=>s.classList.remove('active'));
+
+document.getElementById('sec-'+id)
+.classList.add('active');
+
+document.querySelectorAll('.menu-item')
+.forEach(m=>m.classList.remove('active'));
+
+el.classList.add('active');
+
+window.scrollTo({
+top:0,
+behavior:'smooth'
+});
+
 }
-function downloadBBS(){let blob=new Blob([csvContent],{type:'text/csv'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='BBS_'+currentType+'_'+new Date().toISOString().slice(0,10)+'.csv';a.click();}
-function calcConcrete(){let L=parseFloat(document.getElementById('ccL').value)||0,B=parseFloat(document.getElementById('ccB').value)||0,T=parseFloat(document.getElementById('ccT').value)||0,G=document.getElementById('ccG').value,vol=L*B*T,bags=0;if(G==='M20')bags=vol*1.54/5.5/0.0347;else if(G==='M25')bags=vol*1.54/4/0.0347;else if(G==='M15')bags=vol*1.54/7/0.0347;else bags=vol*1.54/10.5/0.0347;let sand=vol*1.54*1.5/5.5,agg=vol*1.54*3/5.5;document.getElementById('ccRes').innerHTML=`Volume = <span>${vol.toFixed(4)}m³ = ${(vol*35.3147).toFixed(2)} CFT = ${(vol*1000).toFixed(0)} Litre</span><br>Cement = <span>${bags.toFixed(2)} Bags = ${(bags*50).toFixed(0)}kg</span><br>Sand = ${sand.toFixed(3)}m³ = ${(sand*35.31).toFixed(1)} CFT<br>Agg = ${agg.toFixed(3)}m³ = ${(agg*35.31).toFixed(1)} CFT<br><small>Dry Vol = Wet x1.54 | 1 Bag=0.0347m³=1.226CFT</small>`;document.getElementById('ccRes').style.display='block';}
-function calcBrick(){let L=parseFloat(document.getElementById('brL').value)||0,H=parseFloat(document.getElementById('brH').value)||0,T=parseFloat(document.getElementById('brT').value)||0.2,vol=L*H*T,nos=vol/0.002;document.getElementById('brRes').innerHTML=`Wall Vol = <span>${vol.toFixed(3)}m³ = ${(vol*35.31).toFixed(1)} CFT</span><br>Bricks = <span>${Math.ceil(nos)} Nos</span> (+10% waste = ${Math.ceil(nos*1.1)} Nos)<br>Mortar 25% = ${(vol*0.25).toFixed(3)}m³<br>Cement = ${(vol*0.25/7/0.0347).toFixed(2)} Bags<br>Sand = ${(vol*0.25*6/7).toFixed(3)}m³ = ${(vol*0.25*6/7*35.31).toFixed(1)} CFT`;document.getElementById('brRes').style.display='block';}
-function calcPlaster(){let A=parseFloat(document.getElementById('plA').value)||0,T=parseFloat(document.getElementById('plT').value)||12,vol=A*T/1000;document.getElementById('plRes').innerHTML=`Plaster Vol = <span>${vol.toFixed(4)}m³ = ${(vol*35.31).toFixed(2)} CFT</span><br>Cement = <span>${(vol/7/0.0347).toFixed(2)} Bags</span> = ${(vol/7/0.0347*50).toFixed(0)}kg<br>Sand = ${(vol*6/7).toFixed(3)}m³ = ${(vol*6/7*35.31).toFixed(1)} CFT<br>Area ${A}m² = ${(A*10.764).toFixed(1)} ft²<br><small>Ratio 1:6 inner 1:4 outer</small>`;document.getElementById('plRes').style.display='block';}
-function calcSteel(){let D=parseFloat(document.getElementById('stD').value)||0,L=parseFloat(document.getElementById('stL').value)||0,N=parseFloat(document.getElementById('stN').value)||0,w=D*D/162.28*L*N;document.getElementById('stRes').innerHTML=`Weight = <span>${w.toFixed(2)} kg = ${(w/1000).toFixed(4)} Ton = ${(w*0.00981).toFixed(2)} kN = ${(w*2.20462).toFixed(1)} lb</span><br>Length ${L}m = ${(L*3.28084).toFixed(2)}ft = ${(L*1000).toFixed(0)}mm<br>Per bar ${ (D*D/162.28*L).toFixed(2)} kg<br><small>D²/162.2 = kg/m | 12mm=0.888 16mm=1.578</small>`;document.getElementById('stRes').style.display='block';}
-function convertUnit(){let v=parseFloat(document.getElementById('uVal').value)||0,type=document.getElementById('uType').value,res=0,txt='';if(type==='m3-cft'){res=v*35.3147;txt=`${v} m³ = <span>${res.toFixed(4)} CFT ft³</span> = ${(v*1000).toFixed(0)} Litre = ${(v/0.0347).toFixed(2)} Cement Bags`;}else if(type==='cft-m3'){res=v*0.0283168;txt=`${v} CFT = <span>${res.toFixed(4)} m³</span> = ${(res*1000).toFixed(0)} Litre`;}else if(type==='m-ft'){res=v*3.28084;txt=`${v} m = <span>${res.toFixed(4)} ft</span> = ${(v*1000).toFixed(0)} mm = ${(v*39.3701).toFixed(2)} inch`;}else if(type==='ft-m'){res=v*0.3048;txt=`${v} ft = <span>${res.toFixed(4)} m</span> = ${(res*1000).toFixed(0)} mm`;}else if(type==='kg-ton'){res=v/1000;txt=`${v} kg = <span>${res.toFixed(4)} Ton</span> = ${(v*0.00981).toFixed(3)} kN = ${(v*2.20462).toFixed(2)} lb`;}else if(type==='kg-kn'){res=v*0.00981;txt=`${v} kg = <span>${res.toFixed(4)} kN</span>`;}else if(type==='mpa-kgcm2'){res=v*10.1972;txt=`${v} MPa = <span>${res.toFixed(2)} kg/cm²</span> = ${(v*145.038).toFixed(2)} psi`;}else if(type==='bag-m3'){res=v*0.0347;txt=`${v} Bags = <span>${res.toFixed(4)} m³</span> = ${(res*35.3147).toFixed(2)} CFT`;}else if(type==='m2-ft2'){res=v*10.7639;txt=`${v} m² = <span>${res.toFixed(2)} ft²</span> = ${(v/4046.86).toFixed(6)} Acre`;}else if(type==='acre-cent'){res=v*100;txt=`${v} Acre = <span>${res.toFixed(2)} Cent</span> = ${(v*4046.86).toFixed(2)} m² = ${(v*43560).toFixed(0)} ft²`;}document.getElementById('uRes').innerHTML=txt;}
+
+
+/* DARK MODE */
+
+function toggleDark(){
+
+document.body.classList.toggle('dark');
+
+let dark =
+document.body.classList.contains('dark');
+
+document.getElementById('darkBtn').textContent =
+dark ? '☀️' : '🌙';
+
+localStorage.setItem(
+'civilDarkMode',
+dark ? '1' : '0'
+);
+
+}
+
+if(localStorage.getItem('civilDarkMode')==='1'){
+
+document.body.classList.add('dark');
+
+document.getElementById('darkBtn').textContent='☀️';
+
+}
+
+
+/* BBS TYPE */
+
+function setType(type,button){
+
+currentType=type;
+
+document.querySelectorAll(
+'#sec-home .card:nth-of-type(4) .btn'
+).forEach(b=>{
+b.className='btn btn-outline';
+});
+
+if(button){
+button.className='btn btn-dark';
+}
+
+document.querySelectorAll('[id^="form-"]')
+.forEach(f=>f.style.display='none');
+
+let form=document.getElementById(
+'form-'+type
+);
+
+if(form){
+form.style.display='block';
+}
+
+document.getElementById('bbsTitle')
+.textContent =
+type.charAt(0).toUpperCase()+
+type.slice(1)+' BBS';
+
+document.getElementById('bbsResult')
+.style.display='none';
+
+document.getElementById('bbsTable')
+.innerHTML='';
+
+document.getElementById('downloadBtn')
+.style.display='none';
+
+}
+
+
+/* SAFE NUMBER */
+
+function num(id,def=0){
+
+let v=parseFloat(
+document.getElementById(id)?.value
+);
+
+return Number.isFinite(v) ? v : def;
+
+}
+
+
+/* BBS */
+
+function calculateBBS(){
+
+let html='';
+let csv='Description,Dia mm,Length m,Length ft,Nos,Weight kg\n';
+
+if(currentType==='footing'){
+
+let L=num('fL',1.5);
+let B=num('fB',1.5);
+let cover=num('fCover',50);
+let dia=num('fDia',12);
+let spa=num('fSpa',150);
+let footNos=num('fNos',1);
+
+if(L<=0 || B<=0 || dia<=0 || spa<=0){
+
+alert('Please enter valid footing values.');
+return;
+
+}
+
+let coverM=cover/1000;
+
+let hook=9*dia/1000;
+
+let lenL=
+Math.max(0,L-2*coverM+2*hook);
+
+let lenB=
+Math.max(0,B-2*coverM+2*hook);
+
+let nL=
+Math.ceil(
+Math.max(0,(B-2*coverM)*1000)/spa
+)+1;
+
+let nB=
+Math.ceil(
+Math.max(0,(L-2*coverM)*1000)/spa
+)+1;
+
+let kgPerM=dia*dia/162;
+
+let wL=kgPerM*lenL*nL;
+let wB=kgPerM*lenB*nB;
+
+let total=(wL+wB)*footNos;
+
+let concrete=L*B*0.45;
+
+document.getElementById('bbsResult')
+.innerHTML=
+
+`One Footing Steel =
+<span>${(wL+wB).toFixed(2)} kg</span><br>
+Total ${footNos} Footing =
+<span>${total.toFixed(2)} kg</span>
+= ${(total/1000).toFixed(3)} Ton
+<br>
+<small>
+Approx. concrete =
+${concrete.toFixed(3)} m³ =
+${(concrete*35.3147).toFixed(2)} CFT
+</small>`;
+
+html=
+
+`<table>
+<tr>
+<th>Description</th>
+<th>Dia</th>
+<th>Length</th>
+<th>Nos</th>
+<th>kg</th>
+</tr>
+
+<tr>
+<td>L Direction</td>
+<td>${dia}</td>
+<td>${lenL.toFixed(3)}m</td>
+<td>${nL*footNos}</td>
+<td>${(wL*footNos).toFixed(2)}</td>
+</tr>
+
+<tr>
+<td>B Direction</td>
+<td>${dia}</td>
+<td>${lenB.toFixed(3)}m</td>
+<td>${nB*footNos}</td>
+<td>${(wB*footNos).toFixed(2)}</td>
+</tr>
+
+<tr>
+<th colspan="4">Total</th>
+<th>${total.toFixed(2)}</th>
+</tr>
+
+</table>`;
+
+csv+=
+`L Direction,${dia},${lenL.toFixed(3)},${(lenL*3.28084).toFixed(2)},${nL*footNos},${(wL*footNos).toFixed(2)}\n`;
+
+csv+=
+`B Direction,${dia},${lenB.toFixed(3)},${(lenB*3.28084).toFixed(2)},${nB*footNos},${(wB*footNos).toFixed(2)}\n`;
+
+csv+=
+`Total,,,,,${total.toFixed(2)}`;
+
+}
+
+
+else if(currentType==='column'){
+
+let size=
+document.getElementById('cSize')
+.value.toLowerCase()
+.replace(/\s/g,'');
+
+let parts=size.split('x');
+
+let L=parseFloat(parts[0])||300;
+let B=parseFloat(parts[1])||300;
+
+let H=num('cH',3);
+let cover=num('cCover',40);
+let dia=num('cDia',16);
+let barNos=num('cNos',4);
+let stDia=num('cStDia',8);
+let stSpa=num('cStSpa',150);
+
+let mainLen=H+0.30;
+
+let kgPerMMain=
+dia*dia/162;
+
+let mainWeight=
+kgPerMMain*mainLen*barNos;
+
+let clearL=
+Math.max(0,(L-2*cover)/1000);
+
+let clearB=
+Math.max(0,(B-2*cover)/1000);
+
+let stirrupLen=
+2*(clearL+clearB)+0.15;
+
+let stirrupNos=
+Math.ceil(H*1000/stSpa)+1;
+
+let stirrupWeight=
+stDia*stDia/162*
+stirrupLen*
+stirrupNos;
+
+let total=
+mainWeight+stirrupWeight;
+
+let concrete=
+L/1000*B/1000*H;
+
+document.getElementById('bbsResult')
+.innerHTML=
+
+`Main Bars =
+<span>${mainWeight.toFixed(2)} kg</span><br>
+Stirrups =
+<span>${stirrupWeight.toFixed(2)} kg</span><br>
+Total Column Steel =
+<span>${total.toFixed(2)} kg</span>
+<br>
+<small>
+Concrete =
+${concrete.toFixed(3)}m³ =
+${(concrete*35.3147).toFixed(2)} CFT
+</small>`;
+
+html=
+
+`<table>
+<tr>
+<th>Description</th>
+<th>Dia</th>
+<th>Length</th>
+<th>Nos</th>
+<th>kg</th>
+</tr>
+
+<tr>
+<td>Main Bars</td>
+<td>${dia}</td>
+<td>${mainLen.toFixed(3)}m</td>
+<td>${barNos}</td>
+<td>${mainWeight.toFixed(2)}</td>
+</tr>
+
+<tr>
+<td>Stirrups</td>
+<td>${stDia}</td>
+<td>${stirrupLen.toFixed(3)}m</td>
+<td>${stirrupNos}</td>
+<td>${stirrupWeight.toFixed(2)}</td>
+</tr>
+
+<tr>
+<th colspan="4">Total</th>
+<th>${total.toFixed(2)}</th>
+</tr>
+
+</table>`;
+
+csv+=
+`Main Bars,${dia},${mainLen.toFixed(3)},${(mainLen*3.28084).toFixed(2)},${barNos},${mainWeight.toFixed(2)}\n`;
+
+csv+=
+`Stirrups,${stDia},${stirrupLen.toFixed(3)},${(stirrupLen*3.28084).toFixed(2)},${stirrupNos},${stirrupWeight.toFixed(2)}\n`;
+
+csv+=
+`Total,,,,,${total.toFixed(2)}`;
+
+}
+
+
+else if(currentType==='beam'){
+
+let L=num('bL',5);
+let B=num('bW',300);
+let D=num('bD',450);
+
+let bot=
+document.getElementById('bBot')
+.value.split('x');
+
+let top=
+document.getElementById('bTop')
+.value.split('x');
+
+let st=
+document.getElementById('bSt')
+.value.split('@');
+
+let botDia=parseFloat(bot[0])||16;
+let botNos=parseFloat(bot[1])||3;
+
+let topDia=parseFloat(top[0])||12;
+let topNos=parseFloat(top[1])||2;
+
+let stDia=parseFloat(st[0])||8;
+let stSpa=parseFloat(st[1])||150;
+
+let ldBot=
+50*botDia/1000;
+
+let botLen=
+Math.max(0,L-0.05+2*ldBot);
+
+let topLen=
+Math.max(0,L-0.05+2*(50*topDia/1000));
+
+let botWeight=
+botDia*botDia/162*
+botLen*
+botNos;
+
+let topWeight=
+topDia*topDia/162*
+topLen*
+topNos;
+
+let stirrupPerim=
+2*((B/1000-0.05)+(D/1000-0.05));
+
+let stirrupLen=
+Math.max(0,stirrupPerim+0.15);
+
+let stirrupNos=
+Math.ceil(L*1000/stSpa)+1;
+
+let stirrupWeight=
+stDia*stDia/162*
+stirrupLen*
+stirrupNos;
+
+let total=
+botWeight+topWeight+stirrupWeight;
+
+let concrete=
+L*B/1000*D/1000;
+
+document.getElementById('bbsResult')
+.innerHTML=
+
+`Bottom =
+<span>${botWeight.toFixed(2)} kg</span><br>
+Top =
+<span>${topWeight.toFixed(2)} kg</span><br>
+Stirrups =
+<span>${stirrupWeight.toFixed(2)} kg</span><br>
+Total =
+<span>${total.toFixed(2)} kg</span>
+= ${(total/1000).toFixed(3)} Ton
+<br>
+<small>
+Concrete =
+${concrete.toFixed(3)}m³ =
+${(concrete*35.3147).toFixed(2)} CFT
+</small>`;
+
+html=
+
+`<table>
+<tr>
+<th>Description</th>
+<th>Dia</th>
+<th>Length</th>
+<th>Nos</th>
+<th>kg</th>
+</tr>
+
+<tr>
+<td>Bottom</td>
+<td>${botDia}</td>
+<td>${botLen.toFixed(3)}m</td>
+<td>${botNos}</td>
+<td>${botWeight.toFixed(2)}</td>
+</tr>
+
+<tr>
+<td>Top</td>
+<td>${topDia}</td>
+<td>${topLen.toFixed(3)}m</td>
+<td>${topNos}</td>
+<td>${topWeight.toFixed(2)}</td>
+</tr>
+
+<tr>
+<td>Stirrups</td>
+<td>${stDia}</td>
+<td>${stirrupLen.toFixed(3)}m</td>
+<td>${stirrupNos}</td>
+<td>${stirrupWeight.toFixed(2)}</td>
+</tr>
+
+<tr>
+<th colspan="4">Total</th>
+<th>${total.toFixed(2)}</th>
+</tr>
+
+</table>`;
+
+csv+=
+`Bottom,${botDia},${botLen.toFixed(3)},${(botLen*3.28084).toFixed(2)},${botNos},${botWeight.toFixed(2)}\n`;
+
+csv+=
+`Top,${topDia},${topLen.toFixed(3)},${(topLen*3.28084).toFixed(2)},${topNos},${topWeight.toFixed(2)}\n`;
+
+csv+=
+`Stirrups,${stDia},${stirrupLen.toFixed(3)},${(stirrupLen*3.28084).toFixed(2)},${stirrupNos},${stirrupWeight.toFixed(2)}\n`;
+
+csv+=
+`Total,,,,,${total.toFixed(2)}`;
+
+}
+
+
+else if(currentType==='slab'){
+
+let parts=
+document.getElementById('sLB')
+.value.toLowerCase()
+.split('x');
+
+let L=parseFloat(parts[0])||4;
+let B=parseFloat(parts[1])||3;
+
+let T=num('sT',150);
+
+let main=
+document.getElementById('sMain')
+.value.split('@');
+
+let dist=
+document.getElementById('sDist')
+.value.split('@');
+
+let mainDia=parseFloat(main[0])||10;
+let mainSpa=parseFloat(main[1])||150;
+
+let distDia=parseFloat(dist[0])||8;
+let distSpa=parseFloat(dist[1])||200;
+
+let cover=20;
+
+let mainLen=
+Math.max(
+0,
+B-2*cover/1000+
+2*9*mainDia/1000
+);
+
+let mainNos=
+Math.ceil(L*1000/mainSpa)+1;
+
+let distLen=
+Math.max(
+0,
+L-2*cover/1000+
+2*9*distDia/1000
+);
+
+let distNos=
+Math.ceil(B*1000/distSpa)+1;
+
+let mainWeight=
+mainDia*mainDia/162*
+mainLen*
+mainNos;
+
+let distWeight=
+distDia*distDia/162*
+distLen*
+distNos;
+
+let total=
+mainWeight+distWeight;
+
+let concrete=
+L*B*T/1000;
+
+document.getElementById('bbsResult')
+.innerHTML=
+
+`Main Steel =
+<span>${mainWeight.toFixed(2)} kg</span><br>
+Distribution Steel =
+<span>${distWeight.toFixed(2)} kg</span><br>
+Total =
+<span>${total.toFixed(2)} kg</span>
+<br>
+<small>
+Concrete =
+${concrete.toFixed(3)}m³ =
+${(concrete*35.3147).toFixed(2)} CFT
+</small>`;
+
+html=
+
+`<table>
+<tr>
+<th>Description</th>
+<th>Dia</th>
+<th>Length</th>
+<th>Nos</th>
+<th>kg</th>
+</tr>
+
+<tr>
+<td>Main</td>
+<td>${mainDia}</td>
+<td>${mainLen.toFixed(3)}m</td>
+<td>${mainNos}</td>
+<td>${mainWeight.toFixed(2)}</td>
+</tr>
+
+<tr>
+<td>Distribution</td>
+<td>${distDia}</td>
+<td>${distLen.toFixed(3)}m</td>
+<td>${distNos}</td>
+<td>${distWeight.toFixed(2)}</td>
+</tr>
+
+<tr>
+<th colspan="4">Total</th>
+<th>${total.toFixed(2)}</th>
+</tr>
+
+</table>`;
+
+csv+=
+`Main,${mainDia},${mainLen.toFixed(3)},${(mainLen*3.28084).toFixed(2)},${mainNos},${mainWeight.toFixed(2)}\n`;
+
+csv+=
+`Distribution,${distDia},${distLen.toFixed(3)},${(distLen*3.28084).toFixed(2)},${distNos},${distWeight.toFixed(2)}\n`;
+
+csv+=
+`Total,,,,,${total.toFixed(2)}`;
+
+}
+
+document.getElementById('bbsResult')
+.style.display='block';
+
+document.getElementById('bbsTable')
+.innerHTML=html;
+
+csvContent=csv;
+
+document.getElementById('downloadBtn')
+.style.display='block';
+
+}
+
+
+/* DOWNLOAD */
+
+function downloadBBS(){
+
+let blob=
+new Blob([csvContent],{
+type:'text/csv;charset=utf-8;'
+});
+
+let url=
+URL.createObjectURL(blob);
+
+let a=
+document.createElement('a');
+
+a.href=url;
+
+a.download=
+'BBS_'+currentType+'_'+
+new Date().toISOString()
+.slice(0,10)+'.csv';
+
+document.body.appendChild(a);
+
+a.click();
+
+document.body.removeChild(a);
+
+URL.revokeObjectURL(url);
+
+}
+
+
+/* CONCRETE */
+
+function calcConcrete(){
+
+let L=num('ccL');
+let B=num('ccB');
+let T=num('ccT');
+
+if(L<=0||B<=0||T<=0){
+
+alert('Enter valid dimensions.');
+
+return;
+
+}
+
+let G=
+document.getElementById('ccG')
+.value;
+
+let ratio;
+
+if(G==='M20'){
+ratio=[1,1.5,3];
+}
+else if(G==='M25'){
+ratio=[1,1,2];
+}
+else if(G==='M15'){
+ratio=[1,2,4];
+}
+else{
+ratio=[1,3,6];
+}
+
+let vol=L*B*T;
+
+let dry=vol*1.54;
+
+let sum=
+ratio[0]+ratio[1]+ratio[2];
+
+let cementVol=
+dry*ratio[0]/sum;
+
+let sand=
+dry*ratio[1]/sum;
+
+let agg=
+dry*ratio[2]/sum;
+
+let bags=
+cementVol/0.0347;
+
+document.getElementById('ccRes')
+.innerHTML=
+
+`Wet Concrete =
+<span>${vol.toFixed(3)} m³ =
+${(vol*35.3147).toFixed(2)} CFT</span>
+<br>
+Cement =
+<span>${bags.toFixed(2)} Bags</span>
+=
+${(bags*50).toFixed(0)} kg
+<br>
+Sand =
+${sand.toFixed(3)}m³ =
+${(sand*35.3147).toFixed(2)} CFT
+<br>
+Aggregate =
+${agg.toFixed(3)}m³ =
+${(agg*35.3147).toFixed(2)} CFT
+<br>
+<small>
+Dry volume factor used = 1.54
+</small>`;
+
+document.getElementById('ccRes')
+.style.display='block';
+
+}
+
+
+/* BRICK */
+
+function calcBrick(){
+
+let L=num('brL');
+let H=num('brH');
+let T=num('brT',.2);
+
+if(L<=0||H<=0||T<=0){
+
+alert('Enter valid dimensions.');
+
+return;
+
+}
+
+let vol=L*H*T;
+
+/*
+Approximate brickwork quantity.
+Actual brick size and mortar joint should be
+confirmed for project estimation.
+*/
+
+let bricks=vol/0.0018;
+
+let waste=bricks*1.05;
+
+let mortar=vol*0.25;
+
+let cement=
+mortar/(7*0.0347);
+
+let sand=
+mortar*6/7;
+
+document.getElementById('brRes')
+.innerHTML=
+
+`Wall Volume =
+<span>${vol.toFixed(3)}m³ =
+${(vol*35.3147).toFixed(2)} CFT</span>
+<br>
+Approx. Bricks =
+<span>${Math.ceil(bricks)} Nos</span>
+<br>
+With 5% allowance =
+<span>${Math.ceil(waste)} Nos</span>
+<br>
+Approx. Mortar =
+${mortar.toFixed(3)}m³
+<br>
+Cement =
+${cement.toFixed(2)} Bags
+<br>
+Sand =
+${sand.toFixed(3)}m³ =
+${(sand*35.3147).toFixed(2)} CFT
+<br>
+<small>
+Brick size/joint and project specification can change actual quantity.
+</small>`;
+
+document.getElementById('brRes')
+.style.display='block';
+
+}
+
+
+/* PLASTER */
+
+function calcPlaster(){
+
+let A=num('plA');
+let T=num('plT');
+
+let ratio=
+num('plRatio',6);
+
+if(A<=0||T<=0){
+
+alert('Enter valid values.');
+
+return;
+
+}
+
+let wet=A*T/1000;
+
+let dry=wet*1.33;
+
+let sum=1+ratio;
+
+let cementVol=
+dry/sum;
+
+let sand=
+dry*ratio/sum;
+
+let bags=
+cementVol/0.0347;
+
+document.getElementById('plRes')
+.innerHTML=
+
+`Plaster Volume =
+<span>${wet.toFixed(4)}m³ =
+${(wet*35.3147).toFixed(2)} CFT</span>
+<br>
+Cement =
+<span>${bags.toFixed(2)} Bags</span>
+=
+${(bags*50).toFixed(0)}kg
+<br>
+Sand =
+${sand.toFixed(3)}m³ =
+${(sand*35.3147).toFixed(2)} CFT
+<br>
+Area =
+${A.toFixed(2)}m² =
+${(A*10.7639).toFixed(2)}ft²
+<br>
+<small>
+Dry volume factor used = 1.33 | Mix 1:${ratio}
+</small>`;
+
+document.getElementById('plRes')
+.style.display='block';
+
+}
+
+
+/* STEEL */
+
+function calcSteel(){
+
+let D=num('stD');
+let L=num('stL');
+let N=num('stN');
+
+if(D<=0||L<=0||N<=0){
+
+alert('Enter valid steel values.');
+
+return;
+
+}
+
+let kgPerM=
+D*D/162;
+
+let perBar=
+kgPerM*L;
+
+let total=
+perBar*N;
+
+document.getElementById('stRes')
+.innerHTML=
+
+`Weight =
+<span>${total.toFixed(2)} kg</span>
+<br>
+Ton =
+<span>${(total/1000).toFixed(4)} Ton</span>
+<br>
+Per Bar =
+${perBar.toFixed(3)} kg
+<br>
+Length =
+${L.toFixed(2)}m =
+${(L*3.28084).toFixed(2)}ft
+<br>
+Approx. Force Equivalent =
+${(total*0.00980665).toFixed(2)} kN
+<br>
+<small>
+Nominal theoretical unit weight = D²/162 kg/m
+</small>`;
+
+document.getElementById('stRes')
+.style.display='block';
+
+}
+
+
+/* UNIT */
+
+function convertUnit(){
+
+let v=num('uVal');
+
+let type=
+document.getElementById('uType')
+.value;
+
+let txt='';
+
+if(type==='m3-cft'){
+
+txt=
+`${v} m³ =
+<span>${(v*35.3147).toFixed(4)} CFT</span>
+<br>
+${(v*1000).toFixed(2)} Litres`;
+
+}
+
+else if(type==='cft-m3'){
+
+txt=
+`${v} CFT =
+<span>${(v*0.0283168).toFixed(4)} m³</span>
+<br>
+${(v*28.3168).toFixed(2)} Litres`;
+
+}
+
+else if(type==='m-ft'){
+
+txt=
+`${v} m =
+<span>${(v*3.28084).toFixed(4)} ft</span>
+<br>
+${(v*1000).toFixed(0)} mm`;
+
+}
+
+else if(type==='ft-m'){
+
+txt=
+`${v} ft =
+<span>${(v*.3048).toFixed(4)} m</span>
+<br>
+${(v*.3048*1000).toFixed(0)} mm`;
+
+}
+
+else if(type==='kg-ton'){
+
+txt=
+`${v} kg =
+<span>${(v/1000).toFixed(4)} Ton</span>
+<br>
+${(v*2.20462).toFixed(2)} lb`;
+
+}
+
+else if(type==='kg-kn'){
+
+txt=
+`${v} kg =
+<span>${(v*0.00980665).toFixed(4)} kN</span>`;
+
+}
+
+else if(type==='mpa-kgcm2'){
+
+txt=
+`${v} MPa =
+<span>${(v*10.19716).toFixed(3)} kg/cm²</span>
+<br>
+${(v*145.038).toFixed(2)} psi`;
+
+}
+
+else if(type==='bag-m3'){
+
+txt=
+`${v} Cement Bags =
+<span>${(v*.0347).toFixed(4)}m³</span>
+<br>
+${(v*.0347*35.3147).toFixed(2)} CFT`;
+
+}
+
+else if(type==='m2-ft2'){
+
+txt=
+`${v} m² =
+<span>${(v*10.7639).toFixed(3)} ft²</span>`;
+
+}
+
+else if(type==='acre-cent'){
+
+txt=
+`${v} Acre =
+<span>${(v*100).toFixed(2)} Cent</span>
+<br>
+${(v*4046.8564224).toFixed(2)}m²`;
+
+}
+
+document.getElementById('uRes')
+.innerHTML=txt;
+
+}
+
+
+/* EXCAVATION */
+
+function calcExcavation(){
+
+let L=num('exL');
+let B=num('exB');
+let D=num('exD');
+
+let vol=L*B*D;
+
+document.getElementById('exRes')
+.innerHTML=
+
+`Excavation Volume =
+<span>${vol.toFixed(3)} m³</span>
+<br>
+${(vol*35.3147).toFixed(2)} CFT
+<br>
+${(vol*1000).toFixed(0)} Litres equivalent`;
+
+document.getElementById('exRes')
+.style.display='block';
+
+}
+
+
+/* PAINT */
+
+function calcPaint(){
+
+let L=num('paL');
+let H=num('paH');
+let coats=num('paC',2);
+
+let area=L*H;
+
+let totalArea=area*coats;
+
+/*
+Approximate paint consumption depends
+on product and surface.
+*/
+
+let paintLitres=totalArea/10;
+
+document.getElementById('paRes')
+.innerHTML=
+
+`Area =
+<span>${area.toFixed(2)} m²</span>
+=
+${(area*10.7639).toFixed(2)} ft²
+<br>
+Total coat area =
+${totalArea.toFixed(2)}m²
+<br>
+Approx. Paint =
+<span>${paintLitres.toFixed(2)} L</span>
+<br>
+<small>
+Approx. coverage assumed 10m²/L/coat.
+Check actual manufacturer's coverage.
+</small>`;
+
+document.getElementById('paRes')
+.style.display='block';
+
+}
+
+
+/* NOTES DATA */
+
 const notesData=[
-{id:'rcc',title:'RCC Design IS456:2000',sub:'SEM 5 CORE',desc:'M20 min for RCC Cover S20 B25 C40 F50',full:`<b>RCC IS456:2000 Full:</b><br>- Min Grade M20 RCC Mild M25 Moderate M30 Severe<br>- Cover: Mild Slab20 Beam25 Column40 Footing50, Severe +10mm<br>- W/C max Mild 0.55 Moderate 0.50 Severe 0.45 Very Severe 0.45<br>- Min Cement Mild 300kg Moderate 340kg Severe 360kg for M20<br>- Ld= φ*0.87fy/4τbd τbd M20=1.2*1.6=1.92 HYSD So Ld=47φ Fe415 M20<br>- Beam Ast_min=0.85bd/fy Ast_max=0.04bD Spacing max 300mm or 3d<br>- Slab Ast_min 0.12% Fe415 0.15% Fe250 Spacing main 3d or 300mm dist 5d or 450mm<br>- Column min 4 bars rect 6 circ min 12mm dia min steel 0.8% max 6% tie dia 6mm spacing min(L/16,300,least lateral)<br><br><b>Viva:</b> Why M20 min? Durability. Why cover? Corrosion fire. What is Ld? Development length.`},
-{id:'som',title:'Strength of Materials',sub:'SEM 3 CORE',desc:'E=2e5 steel Ec=5000√fck M/I=σ/y',full:`<b>SOM Full:</b><br>- E concrete=5000√fck M20=22360MPa Steel Es=2e5MPa<br>- Bending M/I=σ/y=E/R I_rect=bD³/12 I_circ=πD⁴/64 Z=I/y<br>- Shear τ=VQ/Ib Q=A'y' Max rect 1.5*avg<br>- Torsion T/J=τ/R=Gθ/L J=πD⁴/32 solid G=E/2(1+μ) μ=0.3<br>- Deflection Cantilever point WL³/3EI UDL WL⁴/8EI SS point WL³/48EI UDL 5WL⁴/384EI<br>- Buckling Euler Pe=π²EI/Le² Le Both fixed 0.5L One fixed free 2L Both hinged L`},
-{id:'steel',title:'Steel Structure IS800:2007',sub:'SEM 6 CORE',desc:'γm0 1.1 γm1 1.25 λ Column 180',full:`<b>Steel IS800:2007:</b><br>- Tension Tdg=Ag*fy/γm0 γm0=1.1 Tdn=0.9An*fu/γm1 γm1=1.25 An=Ag-n*d*t d=bolt+2mm<br>- Compression Le=K*L λ=Le/r r=√(I/A) fcd from Table 9a-9d based on λ buckling class a,b,c,d<br>- Beam Md=βb Zp fy/γm0 βb=1 plastic compact Zp=1.14Zy for I Check LTB if unsupported<br>- Bolt Shear Vnsb=fu/√3 *Anb/γmb Bearing Vpb=2.5*kb*d*t*fu/γmb<br>- Weld Fillet strength fu/√3 /γmw γmw 1.25 shop 1.5 field<br>- Max slenderness Column 180 Tension 400 Purlin 300`},
-{id:'estimation',title:'Estimation & Costing',sub:'SEM 6 JOB',desc:'Long wall C/C+B Short C/C-B Centre line',full:`<b>Estimation:</b><br>- Long Wall Length = C/C + Thickness, Short Wall = C/C - Thickness<br>- Centre Line: Total centre length x B x H, Junction deduction (n/2)*B per T-junction<br>- Deduction: Brickwork >0.05m³ full deduct <0.05 no deduction Plaster <0.5m² no deduct 0.5-3m² 50% one side >3m² 100% both sides jambs add<br>- BBS: Cutting Length = Clear +2Ld -2Cover +Hooks Hook 9D Bend 90° 2D 135° 3D Lap 50D tension Fe415 M20<br>- Rate: Material+Labour+1.5%Water+10%Profit+2%T&P Labour Mason 0.5-1 per m³ Mazdoor 2-3 per m³<br>- Rate Analysis M10 4.4B 0.44m³ sand 0.88m³ agg Rs4950 M20 8.51B 0.42 sand 0.84 agg Rs9250 + steel`},
-{id:'iscode',title:'IS Codes 60+ Important',sub:'ALL SEM',desc:'IS456 IS800 IS875 IS10262 IS383 IS1200',full:`<b>IS Codes Summary:</b><br>IS456:2000 RCC Bible Min M20 Cover S20 B25 C40 F50 W/C 0.55 Mild<br>IS800:2007 Steel γm0 1.1 γm1 1.25 λ max Col180 Ten400<br>IS875 P1-5 Loads P1 Dead unit wt P2 Live Resi 2 Office 2.5-4 P3 Wind P4 Snow P5 EQ combo<br>IS10262:2019 Mix Design fcm=fck+1.65S S=4 M20-25 Max W/C vs exposure<br>IS383:2016 Aggregate Zone I-IV sand Flakiness <30% WA <2%<br>IS1786:2008 TMT Fe415 500 500D 550 Elongation 14.5% Fe500<br>IS269:2015 OPC 33/43/53 MPa 28days Initial 30min Final 600min<br>IS1200 1-28 Measurement each item unit & deduction rules QS bible<br>IS2502:1963 BBS Hook 9D Bend 45°1D 90°2D 135°3D 180°4D<br>IS1893:2016 EQ Z 0.10 II 0.16 III 0.24 IV 0.36 V I 1/1.2/1.5 R 3/5<br>IS13920:2016 Ductile Min stirrup 8mm spacing min(d/4,8db,100) within 2d joint`}
+
+{
+id:'rcc',
+title:'RCC Design - IS 456',
+sub:'RCC',
+desc:'Concrete grades, cover, development length, reinforcement and basic RCC concepts.',
+full:`
+<b>RCC BASIC NOTES</b><br><br>
+
+• IS 456:2000 is the principal Indian Standard for plain and reinforced concrete design.<br>
+• Concrete grade is represented by characteristic compressive strength at 28 days.<br>
+• Cover is provided mainly for durability, bond and fire protection.<br>
+• Development length is required to transfer stress from reinforcement to concrete.<br>
+• Reinforcement spacing, cover and detailing must follow the applicable design drawings and code provisions.<br>
+• Minimum reinforcement requirements depend on member type and design provisions.<br><br>
+
+<b>Basic Formula</b><br>
+Development Length:
+Ld = φσs / 4τbd<br><br>
+
+Flexure:
+M = σ × Z<br><br>
+
+Always verify final structural design with the project structural drawings and current applicable code.
+`
+},
+
+{
+id:'steel',
+title:'Steel Structure - IS 800',
+sub:'STEEL',
+desc:'Tension, compression, bolts, welds, slenderness and steel member basics.',
+full:`
+<b>STEEL STRUCTURE NOTES</b><br><br>
+
+• IS 800:2007 covers general construction in steel.<br>
+• Tension members are checked for yielding and rupture.<br>
+• Compression members are checked for buckling.<br>
+• Slenderness ratio = Effective Length / Radius of Gyration.<br>
+• Bolted connections require checks for shear, bearing and related failure modes.<br>
+• Welded connections require strength and detailing checks.<br><br>
+
+<b>Basic Formula</b><br>
+r = √(I/A)<br>
+λ = Le/r<br><br>
+
+Member capacity depends on section properties, material grade, effective length and design provisions.
+`
+},
+
+{
+id:'estimation',
+title:'Estimation & Costing',
+sub:'ESTIMATION',
+desc:'Long wall, short wall, centre line method, quantities and rate analysis.',
+full:`
+<b>ESTIMATION NOTES</b><br><br>
+
+Long Wall:
+Length is generally taken out-to-out depending on the adopted method.<br><br>
+
+Short Wall:
+Length is generally taken in-to-in depending on the adopted method.<br><br>
+
+Centre Line Method:
+Total centre-line length × breadth × depth/height.<br><br>
+
+Rate Analysis normally includes:
+• Materials<br>
+• Labour<br>
+• Equipment / T&P<br>
+• Water and other approved charges<br>
+• Contractor overheads/profit as applicable<br><br>
+
+Always follow the applicable BOQ, department specification and measurement rules.
+`
+},
+
+{
+id:'survey',
+title:'Surveying',
+sub:'SURVEY',
+desc:'Chain survey, levelling, RL, bearing, contour and total station basics.',
+full:`
+<b>SURVEYING NOTES</b><br><br>
+
+Reduced Level:
+RL = HI − Staff Reading<br><br>
+
+Height of Instrument:
+HI = RL + BS<br><br>
+
+Arithmetic Check:
+ΣBS − ΣFS = Last RL − First RL<br><br>
+
+Common Survey Instruments:
+• Auto Level<br>
+• Dumpy Level<br>
+• Total Station<br>
+• Theodolite<br>
+• GPS/GNSS equipment<br><br>
+
+Survey work should always be checked against project control points and benchmarks.
+`
+},
+
+{
+id:'geotech',
+title:'Geotechnical Engineering',
+sub:'SOIL',
+desc:'Index properties, compaction, permeability, shear strength and CBR.',
+full:`
+<b>GEOTECHNICAL NOTES</b><br><br>
+
+Water Content:
+w = Mw/Ms × 100<br><br>
+
+Plasticity Index:
+PI = LL − PL<br><br>
+
+Uniformity Coefficient:
+Cu = D60/D10<br><br>
+
+Coefficient of Curvature:
+Cc = D30²/(D10×D60)<br><br>
+
+Shear Strength:
+τ = c + σ tanφ<br><br>
+
+CBR:
+CBR = Test Load / Standard Load × 100<br><br>
+
+Proctor compaction is used to determine OMC and MDD.
+`
+},
+
+{
+id:'highway',
+title:'Highway Engineering',
+sub:'HIGHWAY',
+desc:'Pavement, traffic, camber, superelevation, materials and road basics.',
+full:`
+<b>HIGHWAY NOTES</b><br><br>
+
+Camber is provided to drain rainwater from the pavement surface.<br><br>
+
+Superelevation is provided on horizontal curves to counteract centrifugal effects.<br><br>
+
+Flexible pavement commonly contains:
+• Subgrade<br>
+• Sub-base<br>
+• Base course<br>
+• Wearing course<br><br>
+
+Common tests include:
+• CBR<br>
+• Aggregate impact<br>
+• Crushing value<br>
+• Los Angeles abrasion<br>
+• Bitumen penetration<br>
+• Softening point
+`
+},
+
+{
+id:'hydraulics',
+title:'Hydraulics & Fluid Mechanics',
+sub:'FM',
+desc:'Continuity, Bernoulli, Reynolds number, pipe flow and open channels.',
+full:`
+<b>FLUID MECHANICS NOTES</b><br><br>
+
+Continuity:
+Q = AV<br><br>
+
+Bernoulli:
+P/γ + V²/2g + Z = Constant<br><br>
+
+Reynolds Number:
+Re = VD/ν<br><br>
+
+Darcy-Weisbach:
+hf = fLV²/(2gD)<br><br>
+
+Flow classification depends on Reynolds number and the applicable flow system.
+`
+},
+
+{
+id:'concrete',
+title:'Concrete Technology',
+sub:'CONCRETE',
+desc:'Cement, aggregate, workability, slump, mix proportion and cube testing.',
+full:`
+<b>CONCRETE TECHNOLOGY</b><br><br>
+
+Important properties:
+• Workability<br>
+• Strength<br>
+• Durability<br>
+• Permeability<br><br>
+
+Slump test is used as an indicator of workability of fresh concrete.<br><br>
+
+Concrete cube testing is commonly performed using standard specimens according to the applicable standard.<br><br>
+
+Mix design should follow the current applicable standard and approved project mix design.
+`
+},
+
+{
+id:'iscode',
+title:'Important IS Codes',
+sub:'IS CODES',
+desc:'IS 456, IS 800, IS 875, IS 10262, IS 383, IS 1200 and other useful standards.',
+full:`
+<b>IMPORTANT CODES</b><br><br>
+
+IS 456 — Plain and Reinforced Concrete<br>
+IS 800 — General Construction in Steel<br>
+IS 875 — Design Loads for Buildings<br>
+IS 10262 — Concrete Mix Proportioning<br>
+IS 383 — Coarse and Fine Aggregate for Concrete<br>
+IS 1200 — Method of Measurement of Building and Civil Engineering Works<br>
+IS 1786 — High Strength Deformed Steel Bars and Wires for Concrete Reinforcement<br>
+IS 1893 — Earthquake Resistant Design Criteria<br>
+IS 13920 — Ductile Detailing of Reinforced Concrete Structures<br>
+IS 2502 — Bending and Fixing of Bars for Concrete Reinforcement<br><br>
+
+Always check the latest applicable revision/amendments before professional use.
+`
+},
+
+{
+id:'viva',
+title:'Civil Engineering Viva Questions',
+sub:'VIVA',
+desc:'Frequently asked site and interview questions for diploma and civil engineering students.',
+full:`
+<b>COMMON VIVA QUESTIONS</b><br><br>
+
+<b>Q1. What is BBS?</b><br>
+Bar Bending Schedule is a tabular representation of reinforcement details such as bar mark, diameter, shape, length and quantity.<br><br>
+
+<b>Q2. Why is cover provided?</b><br>
+To provide protection to reinforcement and maintain durability and fire resistance as required.<br><br>
+
+<b>Q3. What is slump?</b><br>
+A field test indicator of the consistency/workability of fresh concrete.<br><br>
+
+<b>Q4. What is curing?</b><br>
+Maintaining suitable moisture and temperature conditions to support cement hydration and strength development.<br><br>
+
+<b>Q5. What is M20?</b><br>
+A concrete grade whose characteristic compressive strength is 20 MPa at 28 days under the applicable standard definition.
+`
+}
+
 ];
-function loadNotes(){let container=document.getElementById('notesList');let html='';notesData.forEach(n=>{html+=`<div class="card note-card" data-key="${n.title.toLowerCase()} ${n.desc.toLowerCase()}"><div style="display:flex;justify-content:space-between"><div><b style="font-size:6px;background:#f1f5f9;padding:2px 6px;border-radius:8px">${n.sub}</b><h4 style="font-size:12px;margin:4px 0 2px">${n.title}</h4><p style="font-size:9px;color:#64748b">${n.desc}</p></div><button class="btn btn-dark" style="width:auto;padding:6px 12px;height:32px" onclick="toggleNote('${n.id}')">VIEW</button></div><div id="note-${n.id}" class="detail" style="display:none;margin-top:8px;background:#f8fafc;border:1px solid #e2e8f0;padding:10px;border-radius:8px">${n.full}</div></div>`;});container.innerHTML=html;}
-function toggleNote(id){let el=document.getElementById('note-'+id);el.style.display=el.style.display==='none'?'block':'none';}
-function searchNotes(){let q=document.getElementById('searchInput').value.toLowerCase();document.querySelectorAll('.note-card').forEach(c=>{let key=c.getAttribute('data-key');c.style.display=key.includes(q)?'block':'none';});}
-loadNotes();convertUnit();
+
+
+/* LOAD NOTES */
+
+function loadNotes(){
+
+let container=
+document.getElementById('notesList');
+
+let html='';
+
+notesData.forEach(n=>{
+
+html+=`
+
+<div class="card note-card"
+data-search="${(
+n.title+' '+n.sub+' '+n.desc+' '+n.full
+).toLowerCase()}">
+
+<div style="
+display:flex;
+justify-content:space-between;
+gap:10px;
+align-items:flex-start;
+">
+
+<div style="flex:1">
+
+<b style="
+font-size:7px;
+background:#f1f5f9;
+padding:3px 6px;
+border-radius:8px;
+">
+${n.sub}
+</b>
+
+<h4 style="
+font-size:12px;
+margin:5px 0 3px;
+">
+${n.title}
+</h4>
+
+<p style="
+font-size:9px;
+color:#64748b;
+">
+${n.desc}
+</p>
+
+</div>
+
+<button
+class="btn btn-dark"
+style="
+width:auto;
+padding:6px 12px;
+height:32px;
+"
+onclick="toggleNote('${n.id}')"
+>
+VIEW
+</button>
+
+</div>
+
+<div
+id="note-${n.id}"
+class="detail"
+style="
+display:none;
+margin-top:10px;
+background:#f8fafc;
+border:1px solid #e2e8f0;
+padding:10px;
+border-radius:8px;
+"
+>
+${n.full}
+</div>
+
+`;
+
+html+=`</div>`;
+
+});
+
+container.innerHTML=html;
+
+document.getElementById('statNotes')
+.textContent=notesData.length+'+';
+
+}
+
+
+/* TOGGLE NOTE */
+
+function toggleNote(id){
+
+let el=
+document.getElementById('note-'+id);
+
+el.style.display=
+el.style.display==='none'
+?'block'
+:'none';
+
+}
+
+
+/* SEARCH */
+
+function globalSearch(){
+
+let q=
+document.getElementById('searchInput')
+.value
+.toLowerCase()
+.trim();
+
+let noteSection=
+document.getElementById('sec-notes');
+
+if(!q){
+
+document.querySelectorAll('.note-card')
+.forEach(c=>c.style.display='block');
+
+return;
+
+}
+
+/*
+Search notes only when Notes section
+is active or search matches notes.
+*/
+
+let matches=0;
+
+document.querySelectorAll('.note-card')
+.forEach(card=>{
+
+let data=
+card.getAttribute('data-search')||'';
+
+if(data.includes(q)){
+
+card.style.display='block';
+matches++;
+
+}else{
+
+card.style.display='none';
+
+}
+
+});
+
+if(matches>0){
+
+openMain(
+'notes',
+document.querySelectorAll('.menu-item')[2]
+);
+
+}
+
+}
+
+
+/* START */
+
+loadNotes();
+
+convertUnit();
+
 </script>
+
 </body>
 </html>
